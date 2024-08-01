@@ -49,7 +49,6 @@ body, html {
 
 .title {
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
     animation: fadeIn 2s ease-in;
     margin-top: auto;
