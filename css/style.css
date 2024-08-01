@@ -31,6 +31,22 @@ body, html {
     text-align: center;
 }
 
+.container-char {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 6rem;
+    background-image: url(/images/bar-scene.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+}
+
 .title {
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -38,6 +54,55 @@ body, html {
     animation: fadeIn 2s ease-in;
     margin-top: auto;
     text-shadow: 2px 2px 8px #000, -2px -2px 8px #000; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1rem;
+    border-radius: 8px;
+}
+
+input, select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.character-form label,
+.character-form input,
+.character-form select,
+.character-form button {
+    width: 100%;
+    max-width: 300px;
+}
+
+button[type="submit"] {
+    padding: 0.75rem 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 4px groove #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
 .start-button {

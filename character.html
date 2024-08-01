@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <title>Character Creation - Echoes of Eternity</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-char">
+        <h1 class="title">Character Creation</h1>
+        <form id="character-form">
+            <label for="player-name">Enter Character's Name: </label>
+            <input type="text" id="player-name" name="player-name" required>
+
+            <label for="player-class">Choose Your Path: </label>
+            <select id="player-class" name="player-class" required>
+                <option value="knight">Noble Knight</option>
+                <option value="scholar">Arcane Scholar</option>
+                <option value="ranger">Ranger of the Wilds</option>
+                <option value="cleric">Cleric of Light</option>
+                <option value="adventurer">Merchant Adventurer</option>
+                <option value="blacksmith">Blacksmith's Apprentice</option>
+                <option value="mage">Hedge Mage</option>
+                <option value="thief">Street Thief</option>
+            </select>
+
+            <button type="submit" id="create-character" class="start-button">Set foot!</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <p>Inspired by the Well of Urð at the roots of Yggdrasil, where the Norns weave the threads of fate and knowledge, fostering a community of wisdom and shared learning.<br>
+        2024 Echoes of Eternity&trade; by Prism Palette Productions&trade;</p>
+    </footer>
+    <script src="js/character.js"></script>
+</body>
+</html>
