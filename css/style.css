@@ -23,7 +23,7 @@ body, html {
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem;
-    background-image: url(./images/bg-image.jpg);
+    background-image: url(/images/bg-image.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,7 +39,7 @@ body, html {
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem;
-    background-image: url(./images/bar-scene.jpg);
+    background-image: url(/images/bar-scene.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -116,7 +116,7 @@ button[type="submit"]:focus {
     border-radius: 5px;
     backdrop-filter: blur(5px);
     touch-action: manipulation;
-    margin-bottom: auto; /* Adjust to move button */
+    margin-bottom: auto;
 }
 
 .start-button:hover,
