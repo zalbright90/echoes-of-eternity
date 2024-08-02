@@ -15,7 +15,7 @@ body, html {
     line-height: 1.5;
 }
 
-.container {
+.container-start {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@ body, html {
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem;
-    background-image: url(../images/bg-image.jpg);
+    background-image: url(/images/bg-image.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,7 +39,7 @@ body, html {
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem;
-    background-image: url(../images/bar-scene.jpg);
+    background-image: url(/images/bar-scene.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
