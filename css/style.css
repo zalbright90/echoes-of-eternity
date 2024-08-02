@@ -23,7 +23,7 @@ body, html {
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem;
-    background-image: url(/images/bg-image.jpg);
+    background-image: url(images/bg-image.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,7 +39,7 @@ body, html {
     align-items: center;
     padding: 1rem;
     padding-bottom: 6rem;
-    background-image: url(/images/bar-scene.jpg);
+    background-image: url(images/bar-scene.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -161,6 +161,14 @@ button[type="submit"]:focus {
         font-size: 4rem;
     }
 
+    .container-start {
+        background-image: url(images/bg-image.jpg);
+    }
+    
+    .container-char {
+        background-image: url(images/bar-scene.jpg);
+    }
+
     .start-button {
         font-size: 1.5rem;
         padding: 4rem 6rem;
@@ -179,6 +187,14 @@ button[type="submit"]:focus {
 
     .title {
         font-size: 5rem;
+    }
+
+    .container-start {
+        background-image: url(images/bg-image.jpg);
+    }
+    
+    .container-char {
+        background-image: url(images/bar-scene.jpg);
     }
 
     .footer {
