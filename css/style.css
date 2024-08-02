@@ -157,10 +157,6 @@ button[type="submit"]:focus {
         font-size: 18px;
     }
 
-    .container {
-        background-image: url('/images/bg-image.jpg');
-    }
-
     .title {
         font-size: 4rem;
     }
