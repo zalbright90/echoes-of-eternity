@@ -157,6 +157,14 @@ button[type="submit"]:focus {
         font-size: 18px;
     }
 
+    .container-start {
+        background-image: url(/images/bg-image.jpg);
+    }
+
+    .container-char {
+        background-image: url(/images/bar-scene.jpg);
+    }
+
     .title {
         font-size: 4rem;
     }
@@ -179,6 +187,14 @@ button[type="submit"]:focus {
 
     .title {
         font-size: 5rem;
+    }
+
+    .container-start {
+        background-image: url(/images/bg-image.jpg);
+    }
+
+    .container-char {
+        background-image: url(/images/bar-scene.jpg);
     }
 
     .footer {
