@@ -10,11 +10,12 @@
     <div class="container-char">
         <h1 class="title">Character Creation</h1>
         <form id="character-form">
-            <label for="player-name">Enter Character's Name: </label>
+            <label for="player-name">Enter Character's Name</label>
             <input type="text" id="player-name" name="player-name" required>
 
-            <label for="player-class">Choose Your Path: </label>
+            <label for="player-class">Choose Your Path</label>
             <select id="player-class" name="player-class" required>
+                <option value="" selected>Who...are you?</option>
                 <option value="knight">Noble Knight</option>
                 <option value="scholar">Arcane Scholar</option>
                 <option value="ranger">Ranger of the Wilds</option>
@@ -24,7 +25,7 @@
                 <option value="mage">Hedge Mage</option>
                 <option value="thief">Charlatan</option>
             </select>
-
+            <div id="class-tooltip" class="tooltip"></div>
             <button type="submit" id="create-character" class="start-button">Set foot!</button>
         </form>
     </div>
