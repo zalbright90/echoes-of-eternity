@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const playerClassSelect = document.getElementById('player-class');
     const classTooltip = document.getElementById('class-tooltip');
 
+    document.querySelectorAll('#player-class option').forEach(option => {
+        option.textContent = option.dataset.icon + ' ' + option.textContent;
+      });
+
     const classDescriptions = {
         'knight': {
             title: 'Noble Knight',

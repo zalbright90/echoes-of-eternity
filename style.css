@@ -97,7 +97,7 @@ body, html {
     justify-self: flex-start;
     align-items: center;
     padding: 1rem;
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
     background-image: url(bar-scene.jpg);
     background-size: cover;
     background-position: center;
@@ -105,6 +105,11 @@ body, html {
     color: #fff;
     text-align: center;
     transition: height 0.3s ease-in-out;
+}
+
+#player-class option::before {
+    content: attr(data-icon);
+    margin-right: 0.5em;
 }
 
 form {
