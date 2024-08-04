@@ -1,0 +1,40 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Eternity | Your Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="story-output" id="storyOutput">
+            <!-- Story text will be inserted here -->
+        </div>
+        <div class="player-input">
+            <input type="text" id="playerDecision" placeholder="What will you do?">
+            <button onclick="makeDecision()">Act</button>
+        </div>
+        <div id="playerOptions">
+            <!-- Options will be inserted here -->
+        </div>
+        <div class="game-controls">
+            <button onclick="saveGame()">Save Game</button>
+            <button onclick="loadGame()">Load Game</button>
+            <button onclick="showInventory()">Inventory</button>
+        </div>
+        <div class="character-info" id="characterInfo">
+            <!-- Character stats/info will be inserted here -->
+        </div>
+    </div>
+    <script type="module" src="./js/character.js"></script>
+    <script type="module" src="/js/story.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+    <script type="module" src="./js/game.js"></script>
+</body>
+</html>
+    
+</body>
+</html>
