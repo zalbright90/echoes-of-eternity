@@ -2,10 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const characterForm = document.getElementById('character-form');
     const playerClassSelect = document.getElementById('player-class');
     const classTooltip = document.getElementById('class-tooltip');
+    const startButton = document.getElementById('create-character');
+    
+    const navigateToGame = () => {
+        window.location.href = 'game.html';
+    };
+
+    startButton.addEventListener('click', navigateToGame);
+    startButton.addEventListener('touchend', (e) => {
+        e.preventDefault();  // Prevent double-firing on touch devices
+        navigateToGame();
+    });
 
     document.querySelectorAll('#player-class option').forEach(option => {
         option.textContent = option.dataset.icon + ' ' + option.textContent;
-      });
+    });
 
     const classDescriptions = {
         'knight': {
@@ -116,19 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const character = {
             name: playerName,
-            class: playerClass
+            class: playerClass,
+            skills: classDescriptions[playerClass].skills,
+            equipment: classDescriptions[playerClass].equipment
         };
 
-    document.getElementById('player-class').addEventListener('change', function() {
-        const selectedClass = this.value;
-        if (selectedClass && classDescriptions[selectedClass]) {
-            showTooltip(classDescriptions[selectedClass]);
-        } else {
-            hideTooltip();
-        }
-
         localStorage.setItem('character', JSON.stringify(character));
-        window.location.href = 'game.html';
-        });
+        
+        navigateToGame();
     });
 });
