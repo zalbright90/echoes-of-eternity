@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');  // Add missing 'path' import
+const HtmlWebpackPlugin = require('html-webpack-plugin');  // Add missing 'html-webpack-plugin' import
 
 module.exports = {
   entry: './src/index.js',
@@ -23,6 +23,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },
