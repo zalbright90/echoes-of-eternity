@@ -1,56 +1,55 @@
-/* Start Page Styles */
-.start-page {
-    position: relative;
+body {
+    margin: 0;
+    padding: 0;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
+    overflow: hidden;
 }
 
-img .bg-image {
-  position: absolute;
-  height: 100vh;
+#content {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }
-  
-.blur-overlay {
+
+.start-screen {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2rem;
+    box-sizing: border-box;
 }
-  
-.content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-}
-  
+
 .title {
-    font-size: 4rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
-  
-.title span {
-    display: inline-block;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
+
+.info {
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: #00000050;
 }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .start-button {
-    margin-top: 2rem;
+
+.button-section {
+    margin-top: auto;
+}
+
+.start-button {
+    margin-bottom: 6rem;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     background-color: rgba(255,255,255,0.2);
@@ -58,8 +57,8 @@ img .bg-image {
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
-  
-  .start-button:hover {
+}
+
+.start-button:hover {
     background-color: rgba(255,255,255,0.4);
-  }
+}

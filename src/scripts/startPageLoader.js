@@ -1,25 +1,22 @@
 import bgImage from '../images/echoes-forest-bg.jpg';
+
 function loadBackgroundImage() {
-  const imageLoad = document.createElement('div');
-
-  const backgroundImage = document.createElement('img');
-  backgroundImage.src = bgImage;
-  backgroundImage.alt = 'Fantasy Forest';
-  backgroundImage.classList.add('bg-image');
-  imageLoad.appendChild(backgroundImage);
-
-
-  return imageLoad;
+  const body = document.body;
+  body.style.backgroundImage = `url(${bgImage})`;
+  body.style.backgroundSize = 'cover';
+  body.style.backgroundPosition = 'center';
+  body.style.backgroundRepeat = 'no-repeat';
 }
 
 function initialLoad() {
-  const body = document.querySelector('body');
-  body.insertBefore(loadBackgroundImage(), document.querySelector('main'));
+  loadBackgroundImage();
 
-  const content = document.querySelector('#content');
-    const initialContent = document.createElement('div');
-    initialContent.textContent = 'Initial content goes here.';
-    content.appendChild(initialContent);
+  const content = document.getElementById('content');
+  if (!content) {
+    const newContent = document.createElement('div');
+    newContent.id = 'content';
+    document.body.appendChild(newContent);
+  }
 }
 
 export default initialLoad;
