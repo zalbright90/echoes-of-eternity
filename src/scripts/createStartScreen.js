@@ -1,12 +1,12 @@
 function createStartScreen() {
 
     const startScreen = document.createElement('div');
-    startScreen.classList.add('start-screen');
+    startScreen.classList.add('screen');
 
-    const gameTitle = document.createElement('h1');
-    gameTitle.classList.add('title');
-    gameTitle.textContent = 'Echoes of Eternity';
-    startScreen.appendChild(gameTitle);
+    const storyTitle = document.createElement('h1');
+    storyTitle.classList.add('title');
+    storyTitle.textContent = 'Echoes of Eternity';
+    startScreen.appendChild(storyTitle);
 
     const infoParagraph = document.createElement('p');
     infoParagraph.classList.add('info')
@@ -18,6 +18,7 @@ function createStartScreen() {
 
     const startButton = document.createElement('button');
     startButton.classList.add('start-button');
+    startButton.id = 'startButton';
     startButton.textContent = 'Start your adventure!';
     buttonSection.appendChild(startButton);
 
