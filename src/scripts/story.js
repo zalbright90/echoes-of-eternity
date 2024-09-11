@@ -166,7 +166,52 @@ function loadSeekElder() {
 
   const content = document.getElementById('content');
   content.innerHTML = '';
-  
+
+  const storyWrapper = document.createElement('div');
+  storyWrapper.classList.add('screen');
+
+  const chapterTitle = document.createElement('h2');
+  chapterTitle.classList.add('chapter-title');
+  chapterTitle.textContent = 'Choice 2: Seek an Elder';
+  storyWrapper.appendChild(chapterTitle);
+
+  const sceneNarrative = document.createElement('p');
+  sceneNarrative.classList.add('narrative');
+  sceneNarrative.textContent = 'You decide that knowledge is your best ally in this strange situation. You make your way to the Grand Library of Aethoria, a massive structure said to house knowledge from across all realms.  As you approach the entrance, you notice that the usually calm scholars are in a state of frenzy, rushing about with armfuls of scrolls and ancient tomes. You manage to catch the attention of Magister Elowen, a respected expert in celestial phenomena. "Ah, a seeker of knowledge in these tumultuous times," she says, her eyes gleaming with a mix of excitement and concern. "You have come at a most auspicious moment. The Convergence is upon us, and with it, the awakening of ancient powers."';
+  storyWrapper.appendChild(sceneNarrative);
+
+  const choiceQuestion = document.createElement('p');
+  choiceQuestion.classList.add('choice-section');
+  choiceQuestion.textContent = 'What do you do?';
+  storyWrapper.appendChild(choiceQuestion);
+
+  const choiceList = document.createElement('ol');
+  choiceList.className = 'choice-list';
+
+  const firstChoice = document.createElement('li');
+  firstChoice.textContent = 'Ask about the Convergence and its signifigance.';
+  choiceList.appendChild(firstChoice);
+
+  const secondChoice = document.createElement('li');
+  secondChoice.textContent = 'Inquire about the "Awakening of ancient powers" she mentioned.';
+  choiceList.appendChild(secondChoice);
+
+  const thirdChoice = document.createElement('li');
+  thirdChoice.textContent = 'Request to see any relevant texts or prophecies.';
+  choiceList.appendChild(thirdChoice);
+
+  storyWrapper.appendChild(choiceList);
+
+  const choices = [
+    { text: 'Convergence?', value: 'aboutConvergence' },
+    { text: 'Awakening of ancient powers?', value: 'awakeningPowers' },
+    { text: 'Texts or prophecies?', value: 'textsProphecies' }
+  ];
+
+  createChoiceButtons(choices, storyWrapper);
+  content.appendChild(storyWrapper);
+
+  return storyWrapper;
 }
 
 function loadVisitTemple() {
