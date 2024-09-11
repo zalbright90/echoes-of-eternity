@@ -54,14 +54,6 @@ function setupChoiceListeners() {
     });
 }
 
-/*function handleChoice(choice) {
-    switch (choice) {
-        case 'choiceOne'
-        loadBackgroundImage(require('../images/.....'));
-        console.log('User pushes through the crowd');
-    }
-}*/
-
 // Run initialization once on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', initializeApp);
 
