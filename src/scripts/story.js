@@ -1,3 +1,5 @@
+import { loadBackgroundImage } from "./initializer";
+
 function narrativeScreen() {
   const content = document.getElementById('content');
   content.innerHTML = '';
@@ -13,7 +15,7 @@ function narrativeScreen() {
 
   const sceneSetting = document.createElement('p');
   sceneSetting.classList.add('info');
-  sceneSetting.textContent = 'The celestial convergence approaches, and strange phenomena occur throughout Varathis - A new country in the year is 2068, Earth is not how we know it constructed today after World War III';
+  sceneSetting.textContent = 'As the celestial convergence draws near, strange phenomena begin to unfold across Varathis—a newly formed nation in the year 2068. In a world reshaped by the aftermath of World War III, Earth is no longer as we know it, and the fabric of reality itself seems to fray at the edges.';
   storyWrapper.appendChild(sceneSetting);
 
   const chapterTitle = document.createElement('h2');
@@ -30,6 +32,23 @@ function narrativeScreen() {
   choiceQuestion.classList.add('choice-section');
   choiceQuestion.textContent = 'What do you do?';
   storyWrapper.appendChild(choiceQuestion);
+
+  const choiceList = document.createElement('ol');
+  choiceList.className = 'choice-list';
+
+  const firstChoice = document.createElement('li');
+  firstChoice.textContent = 'Push through the crowd to get a closer look at the moons.';
+  choiceList.appendChild(firstChoice);
+
+  const secondChoice = document.createElement('li');
+  secondChoice.textContent = 'Seek out a local Elder to understand the meaning of this event.';
+  choiceList.appendChild(secondChoice);
+
+  const thirdChoice = document.createElement('li');
+  thirdChoice.textContent = 'Head to the nearest temple to consult with the priests.';
+  choiceList.appendChild(thirdChoice);
+
+  storyWrapper.appendChild(choiceList);
 
   const choices = [
       { text: 'Investigate the Moons', value: 'investigateMoons' },
@@ -68,7 +87,7 @@ function handleChoice(choice) {
   switch (choice) {
       case 'investigateMoons':
           console.log('User pushes through crowd.');
-          loadThroughCrowd();
+          loadInvestigateMoons();
           break;
       case 'seekElder':
           console.log('User seeks an elder.');
@@ -84,8 +103,12 @@ function handleChoice(choice) {
   }
 }
 
-// Functions to load content for each choice
-function loadThroughCrowd() {
+// Choices for Act 1: Chapter 1
+function loadInvestigateMoons() {
+  console.log('Loading Investigate the Moons');
+
+  loadBackgroundImage(require('../images/investigate-moons.jpg'));
+
   const content = document.getElementById('content');
   content.innerHTML = '';
 
@@ -110,9 +133,24 @@ function loadThroughCrowd() {
   const choiceList = document.createElement('ol');
   choiceList.className = 'choice-list';
 
+  const firstChoice = document.createElement('li');
+  firstChoice.textContent = 'Examine the symbol on your hand more closely.';
+  choiceList.appendChild(firstChoice);
+
+  const secondChoice = document.createElement('li');
+  secondChoice.textContent = 'Ask the old woman about the Triad of Fate and the ancient scrolls.';
+  choiceList.appendChild(secondChoice);
+
+  const thirdChoice = document.createElement('li');
+  thirdChoice.textContent = 'Look around to see if others have similar markings.';
+  choiceList.appendChild(thirdChoice);
+
+  storyWrapper.appendChild(choiceList);
+
   const choices = [
       { text: 'Investigate symbols', value: 'investigateSymbols' },
-      { text: 'Leave the temple', value: 'leaveTemple' }
+      { text: 'Ask about Triad of Fate', value: 'triadFate' },
+      { text: 'Look for others', value: 'lookAround' }
   ];
 
   createChoiceButtons(choices, storyWrapper);
