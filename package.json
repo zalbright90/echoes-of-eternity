@@ -1,5 +1,5 @@
 {
-  "name": "es6-webpack-template",
+  "name": "echoes-of-eternity",
   "version": "1.0.0",
   "description": "A template repo for future projects using webpack and modules.",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zalbright90/es6-webpack-template.git"
+    "url": "git+https://github.com/zalbright90/echoes-of-eternity.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zalbright90/es6-webpack-template/issues"
+    "url": "https://github.com/zalbright90/echoes-of-eternity/issues"
   },
-  "homepage": "https://github.com/zalbright90/es6-webpack-template#readme",
+  "homepage": "https://github.com/zalbright90/echoes-of-eternity#readme",
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",

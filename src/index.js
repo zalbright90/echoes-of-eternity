@@ -1,14 +1,13 @@
 import './style.css';
 import { initialLoad, loadBackgroundImage } from './scripts/initializer';
-import createStartScreen from './scripts/createStartScreen';
 import narrativeScreen from './scripts/story';
+import createStartScreen from './scripts/createStartScreen';
 
 function initializeApp() {
     console.log('Initializing app');
     initialLoad();
     const content = document.getElementById('content');
-    
-    // Check if content is already loaded
+
     if (content.children.length === 0) {
         console.log('Loading content');
 
@@ -19,9 +18,9 @@ function initializeApp() {
             content.appendChild(element);
             console.log('Content after append:', content.innerHTML);
         }
-        
+
         loadContent(createStartScreen);
-        
+
         const startButton = document.getElementById('startButton');
         startButton.addEventListener('click', startNarrative);
     } else {
@@ -39,19 +38,6 @@ function startNarrative() {
 
     // Load Narrative Content (story.js)
     narrativeScreen();
-
-    // Add event listeners
-    setupChoiceListeners();
-}
-
-function setupChoiceListeners() {
-    const choiceButtons = document.querySelectorAll('.choice-button');
-    choiceButtons.forEach((button) => {
-        button.addEventListener('click', (event) => {
-            const choice = event.target.getAttribute('data-choice');
-            handleChoice(choice);
-        });
-    });
 }
 
 // Run initialization once on DOMContentLoaded
