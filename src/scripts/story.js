@@ -105,7 +105,7 @@ function handleChoice(choice) {
 
 // Choices for Act 1: Chapter 1
 function loadInvestigateMoons() {
-  console.log('Loading Investigate the Moons');
+  console.log('Loading Investigate the Moons...');
 
   loadBackgroundImage(require('../images/investigate-moons.jpg'));
 
@@ -160,9 +160,13 @@ function loadInvestigateMoons() {
 }
 
 function loadSeekElder() {
+  console.log('Loading Seek Elder...');
+
+  loadBackgroundImage(require('../images/seek-elders.jpg'));
+
   const content = document.getElementById('content');
-  content.innerHTML = '<p>You decide to find a local sage or scholar...</p>';
-  // Continue narrative logic...
+  content.innerHTML = '';
+  
 }
 
 function loadVisitTemple() {
