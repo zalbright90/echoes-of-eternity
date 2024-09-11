@@ -1,154 +1,211 @@
 /* Basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+
+/* Main content area */
+#content {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.85); /* Slight transparency for background visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
+}
+
+/* Start screen container */
+.screen {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Title and info styles */
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.info {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #222;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Button section styling */
+.button-section, .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+/* Professional button styling */
+.start-button, .choice-button {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+}
+
+/* Hover and active states for buttons */
+.start-button:hover, .choice-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.start-button:active, .choice-button:active {
+  background-color: #1c5985;
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Choice list styling */
+.choice-list {
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.choice-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.choice-list li:hover {
+  color: #2980b9;
+}
+
+/* Chapter title and narrative styles */
+.chapter-title {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+.narrative {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #121212;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Choice section styling */
+.choice-section {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.choice-list {
+  padding: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  /* Body styles */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-size: cover;
-    background-position: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Main content area */
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
   #content {
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 80vh;
+    max-width: 700px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.9);
   }
-  
-  /* Start screen container */
-  .screen {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-  
-  /* Title and info styles */
+
   .title {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #222;
   }
-  
+
   .info {
-    font-weight: 600;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: #222;
-    width: 438px;
-    text-align: center;
-    margin: 0 auto;
+    width: 80%;
   }
-  
-  /* Button section styling */
-  .button-section, .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-top: 20px;
-  }
-  
-  /* Professional button styling */
-  .start-button, .choice-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 5px;
-  }
-  
-  /* Hover and active states for buttons */
-  .start-button:hover, .choice-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .start-button:active, .choice-button:active {
-    background-color: #1c5985;
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Choice list styling */
-  .choice-list {
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
-  }
-  
-  .choice-list li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #000;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  
-  .choice-list li:hover {
-    color: #2980b9;
-  }
-  
-  /* Chapter title and narrative styles */
+
   .chapter-title {
     font-size: 1.8rem;
-    margin: 20px 0;
-    color: #333;
   }
-  
+
   .narrative {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #121212;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  /* Choice section styling */
-  .choice-section {
-    font-weight: bold;
     font-size: 1.1rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #222;
   }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+}
+
+@media (min-width: 1024px) {
+  #content {
+    max-width: 900px;
+    padding: 32px;
+    background-color: rgba(255, 255, 255, 0.95);
   }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .info {
+    font-size: 1.2rem;
+  }
+
+  .chapter-title {
+    font-size: 2rem;
+  }
+
+  .narrative {
+    font-size: 1.2rem;
+  }
+}
