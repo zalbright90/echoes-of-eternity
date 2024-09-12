@@ -125,8 +125,66 @@ export function loadInvestigateMoons() {
     createChoiceButtons(choices, storyWrapper);
     content.appendChild(storyWrapper);
 }
+
+export function loadInvestigateSymbols() {
+  loadBackgroundImage(require('../images/investigate-symbols.jpg'));
+
+  const content = document.getElementById('content');
+  content.innerHTML = '';
+
+  const storyWrapper = document.createElement('div');
+  storyWrapper.classList.add('screen');
+
+  const chapterTitle = document.createElement('h2');
+  chapterTitle.classList.add('chapter-title');
+  chapterTitle.textContent = 'Examine the symbol on your hand more closely.';
+  storyWrapper.appendChild(chapterTitle);
+
+  const infoParagraph = document.createElement('p');
+  infoParagraph.classList.add('info');
+  infoParagraph.textContent = 'After witnessing the extraordinary sight of the three moons in the sky and the blinding light that bathed the city, you notice a glowing symbol on your hand.';
+  storyWrapper.appendChild(infoParagraph);
+
+  const sceneNarrative = document.createElement('p');
+  sceneNarrative.classList.add('narrative');
+  sceneNarrative.textContent = 'As you bring your hand closer to your face, the symbol begins to glow more intensely. It is an intricate design, reminiscent of a tree with three intertwining branches. Each branch ends in a different symbol: A flame, a droplet, and a leaf. Suddenly, you feel a surge of energy coursing through your body. Your vision blurs, and you find yourself experiencing a series of rapid visions:';
+  storyWrapper.appendChild(sceneNarrative);
+
+  const visionList = document.createElement('ul');
+  visionList.classList.add('choice-list');
+
+  const visionOne = document.createElement('li');
+  visionOne.textContent = 'A snow-capped mountain split by a chasm of fire.';
+  visionList.appendChild(visionOne);
+
+  const visionTwo = document.createElement('li');
+  visionTwo.textContent = 'A lush forest withering under an unnatural drought.';
+  visionList.appendChild(visionTwo);
+
+  const visionThree = document.createElement('li');
+  visionThree.textContent = 'A great flood threatening to submerge an ancient city.';
+  visionList.appendChild(visionThree);
+
+  storyWrapper.appendChild(visionList);
+
+  const sceneContinue = document.createElement('p');
+  sceneContinue.classList.add('narrative');
+  sceneContinue.textContent = 'As the visions fade, you hear a voice echoing in your mind:';
+  storyWrapper.appendChild(sceneContinue);
+
+  const voiceEcho = document.createElement('em');
+  voiceEcho.textContent = ' "Seeker, the balance is broken. The Elemental Realms cry out for restoration."';
+  voiceEcho.classList.add('voice-echo');
+  storyWrapper.appendChild(voiceEcho);
+
+  // Add button and logic to go to chapter 2 based on investigating moons
+
+  content.appendChild(storyWrapper);
+}
+
+
   
-  export function loadSeekElder() {
+export function loadSeekElder() {
     loadBackgroundImage(require('../images/seek-elders.jpg'));
   
     const content = document.getElementById('content');
@@ -177,9 +235,9 @@ export function loadInvestigateMoons() {
     content.appendChild(storyWrapper);
   
     return storyWrapper;
-  }
+}
   
-  export function loadVisitTemple() {
+export function loadVisitTemple() {
     const content = document.getElementById('content');
     content.innerHTML = '';
     
@@ -225,6 +283,6 @@ export function loadInvestigateMoons() {
     ];
     createChoiceButtons(choices, storyWrapper);
     content.appendChild(storyWrapper);
-  }
+}
 
   export default loadChapterOne;

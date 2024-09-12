@@ -1,5 +1,5 @@
-import { loadBackgroundImage } from "./initializer";
-import loadChapterOne, { loadInvestigateMoons, loadSeekElder, loadVisitTemple } from './chapterOne';
+import { loadBackgroundImage } from './initializer';
+import loadChapterOne, { loadInvestigateMoons, loadInvestigateSymbols, loadSeekElder, loadVisitTemple } from './chapterOne';
 
 function narrativeScreen() {
   loadChapterOne();
@@ -29,19 +29,23 @@ export function createChoiceButtons(choices, parentElement) {
 export function handleChoice(choice) {
   switch (choice) {
       case 'investigateMoons':
-          console.log('User pushes through crowd.');
+          console.log('User pushes through crowd...');
           loadInvestigateMoons();
           break;
+      case 'investigateSymbols':
+            console.log('User examines symbol on hand...');
+            loadInvestigateSymbols();
+            break;
       case 'seekElder':
-          console.log('User seeks an elder.');
+          console.log('User seeks an elder...');
           loadSeekElder();
           break;
       case 'visitTemple':
-          console.log('User visits a temple.');
+          console.log('User visits a temple...');
           loadVisitTemple();
           break;
       default:
-          console.log('Unknown choice.');
+          console.log('Unknown choice');
           break;
   }
 }

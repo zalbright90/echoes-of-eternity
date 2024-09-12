@@ -148,6 +148,13 @@ body {
   padding: 0.5rem;
 }
 
+.voice-echo {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
