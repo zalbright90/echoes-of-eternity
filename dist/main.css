@@ -1,0 +1,272 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+/* Main content area */
+#content {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+/* Start screen container */
+.screen {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Title and info styles */
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.info {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #222;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Button section styling */
+.button-section, .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  margin-top: auto;
+}
+
+/* Professional button styling */
+.start-button, .choice-button {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+}
+
+/* Hover and active states for buttons */
+.start-button:hover, .choice-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.start-button:active, .choice-button:active {
+  background-color: #1c5985;
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Choice list styling */
+.choice-list {
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.choice-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.choice-list li:hover {
+  color: #2980b9;
+}
+
+/* Chapter title and narrative styles */
+.chapter-title {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+.narrative {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #121212;
+  margin-bottom: 20px;
+  text-align: left;
+  padding: 1rem 0;
+}
+
+/* Choice section styling */
+.choice-section {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.choice-list {
+  padding: 0.5rem;
+}
+
+.voice-echo {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #36bd14;
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #cec112;
+}
+
+.social-links a:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Larger Screens */
+@media (min-width: 768px) {
+  #content {
+    max-width: 700px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .info {
+    font-size: 1.1rem;
+    width: 80%;
+  }
+
+  .chapter-title {
+    font-size: 1.8rem;
+  }
+
+  .narrative {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #content {
+    max-width: 900px;
+    padding: 32px;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .info {
+    font-size: 1.2rem;
+  }
+
+  .chapter-title {
+    font-size: 2rem;
+  }
+
+  .narrative {
+    font-size: 1.2rem;
+  }
+}
+
