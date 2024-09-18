@@ -1,6 +1,6 @@
 import { loadBackgroundImage } from './initializer';
 import loadChapterOne, { loadInvestigateMoons, loadInvestigateSymbols, loadTriadFate, loadLookAround, loadSeekElder, loadAboutConvergence, loadAwakeningPowers, loadTextsProphecies, loadVisitTemple, loadMoons, loadRoleDestiny, loadNextSteps } from './chapterOne';
-import loadChapterTwo, {} from './chapterTwo-Moons';
+import loadChapterTwoMoons from './chapterTwo-Moons';
 
 function narrativeScreen() {
   loadChapterOne();
@@ -77,6 +77,10 @@ export function handleChoice(choice) {
             console.log('User finds out their next steps...');
             loadNextSteps();
             break;
+      case 'chapterTwoMoons':
+        console.log('User as progress to Chapter 2');
+        loadChapterTwoMoons();
+        break;
       default:
           console.log('Unknown choice');
           break;

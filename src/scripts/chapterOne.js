@@ -1,5 +1,6 @@
 import { createChoiceButtons, handleChoice } from './story';
 import { loadBackgroundImage } from './initializer';
+import loadChapterTwoMoons from './chapterTwo-Moons';
 
 function loadChapterOne(choice) {
     const content = document.getElementById('content');
@@ -87,7 +88,7 @@ export function loadInvestigateMoons() {
     
     const chapterTitle = document.createElement('h2');
     chapterTitle.classList.add('chapter-title');
-    chapterTitle.textContent = 'Choice 1: Investiagate the Moons';
+    chapterTitle.textContent = 'Choice 1: Investigate the Moons';
     storyWrapper.appendChild(chapterTitle);
   
     const sceneNarrative = document.createElement('p');
@@ -170,7 +171,7 @@ export function loadInvestigateSymbols() {
 
   const sceneContinue = document.createElement('p');
   sceneContinue.classList.add('narrative');
-  sceneContinue.textContent = 'As the visions fade, you hear a voice echoing in your mind:';
+  sceneContinue.textContent = 'As the visions fade, you notice that each branch of the symbol seems to pulse faintly in the direction of one of the moons. The symbols are interconnected, hinting that your path will influence the others. You hear a voice echoing in your mind:';
   storyWrapper.appendChild(sceneContinue);
 
   const voiceEcho = document.createElement('em');
@@ -179,6 +180,13 @@ export function loadInvestigateSymbols() {
   storyWrapper.appendChild(voiceEcho);
 
   // Add button and logic to go to chapter 2 based on investigating moons
+  const continueButton = document.createElement('button');
+  continueButton.textContent = 'Continue to Chapter Two - Chosen One Path';
+  continueButton.classList.add('choice-button');
+  storyWrapper.appendChild(continueButton);
+  continueButton.addEventListener('click', () => {
+    loadChapterTwoMoons();
+  });
 
   content.appendChild(storyWrapper);
 }
@@ -209,7 +217,7 @@ export function loadTriadFate() {
 
   const sceneContinue = document.createElement('p');
   sceneContinue.classList.add('narrative');
-  sceneContinue.textContent = 'The ancient scrolls speak of a time when these forces would manifest as three moons in the sky, heralding the awakening of the Lost Relics." She grabs your arm with suprising strength.';
+  sceneContinue.textContent = 'The ancient scrolls speak of a time when these forces would manifest as three moons in the sky, heralding the awakening of the Lost Relics." She grabs your arm with suprising strength, the symbol glows again, revealing fleeting images of a temple and three glowing figures, each linked to one of the marks.';
   storyWrapper.appendChild(sceneContinue);
 
   const voiceEcho = document.createElement('em');
@@ -218,6 +226,13 @@ export function loadTriadFate() {
   storyWrapper.appendChild(voiceEcho);
 
   // Logic to go to chapter 2 from Investigate Moons
+  const continueButton = document.createElement('button');
+  continueButton.textContent = 'Continue to Chapter Two - Chosen One Path';
+  continueButton.classList.add('choice-button');
+  storyWrapper.appendChild(continueButton);
+  continueButton.addEventListener('click', () => {
+    loadChapterTwoMoons();
+  });
 
   content.appendChild(storyWrapper);
 }
@@ -248,10 +263,17 @@ export function loadLookAround() {
 
   const sceneContinue = document.createElement('p');
   sceneContinue.classList.add('narrative');
-  sceneContinue.textContent = 'As you notice them, they seem to become aware of you too. Your eyes meet, and you feel an inexplicable connection, as if you are all part of something greater than yourselves.';
+  sceneContinue.textContent = 'As you lock eyes with them, the symbols seem to resonate with one another. You get a faint sense that your fates are intertwined, but also distinct—each of you connected to one of the realms.';
   storyWrapper.appendChild(sceneContinue);
 
   // Add logic to go to Chapter 2 from investigating moons
+  const continueButton = document.createElement('button');
+  continueButton.textContent = 'Continue to Chapter Two - Chosen One Path';
+  continueButton.classList.add('choice-button');
+  storyWrapper.appendChild(continueButton);
+  continueButton.addEventListener('click', () => {
+    loadChapterTwoMoons();
+  });
 
   content.appendChild(storyWrapper);
 }
