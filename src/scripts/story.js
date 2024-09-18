@@ -1,5 +1,6 @@
 import { loadBackgroundImage } from './initializer';
 import loadChapterOne, { loadInvestigateMoons, loadInvestigateSymbols, loadTriadFate, loadLookAround, loadSeekElder, loadAboutConvergence, loadAwakeningPowers, loadTextsProphecies, loadVisitTemple, loadMoons, loadRoleDestiny, loadNextSteps } from './chapterOne';
+import loadChapterTwo, {} from './chapterTwo-Moons';
 
 function narrativeScreen() {
   loadChapterOne();
