@@ -160,6 +160,15 @@ body {
   padding: 0.5rem;
 }
 
+.knowledge-list {
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .voice-echo {
   font-weight: bold;
   font-size: 1.1rem;
