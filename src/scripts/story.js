@@ -28,6 +28,9 @@ export function createChoiceButtons(choices, parentElement) {
 
 // Function to handle user choices
 export function handleChoice(choice) {
+
+  saveProgress(choice);
+
   switch (choice) {
       case 'investigateMoons':
           console.log('User pushes through crowd...');
@@ -78,13 +81,34 @@ export function handleChoice(choice) {
             loadNextSteps();
             break;
       case 'chapterTwoMoons':
-        console.log('User as progress to Chapter 2');
+        console.log('User as progress to Chapter 2 from investigating the moons...');
         loadChapterTwoMoons();
         break;
+      
       default:
           console.log('Unknown choice');
           break;
   }
+}
+
+// Create a function to save reader progress
+export function saveProgress(choice) {
+  localStorage.setItem('storyProgress', JSON.stringify(choice));
+  console.log('Progress Saved');
+}
+
+// Create a function to load reader progress
+export function loadProgress() {
+  const savedChoice = localStorage.getItem('storyProgress');
+  console.log('Progress Loaded');
+  return savedChoice ? JSON.parse(savedChoice) : null;
+}
+
+// Clear progress if player wants to start over
+export function clearProgress() {
+  localStorage.removeItem('storyProgress');
+  console.log('Progress cleared');
+  narrativeScreen();
 }
 
 export default narrativeScreen;

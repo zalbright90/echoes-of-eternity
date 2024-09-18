@@ -1,4 +1,4 @@
-import { createChoiceButtons, handleChoice } from './story';
+import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
 import loadChapterTwoMoons from './chapterTwo-Moons';
 

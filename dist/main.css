@@ -176,6 +176,28 @@ body {
   padding: 1rem;
 }
 
+#restart-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  margin-bottom: 1rem;
+  z-index: 1000; /* Ensure it's always visible */
+}
+
+#restart-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#restart-button:hover {
+  background-color: #d32f2f;
+}
+
 footer {
   display: flex;
   justify-content: center;

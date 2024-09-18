@@ -1,3 +1,6 @@
+import { clearProgress } from  './story';
+
+
 function loadBackgroundImage(imageSrc) {
   const body = document.body;
   body.style.backgroundImage = `url(${imageSrc})`;
@@ -18,5 +21,14 @@ function initialLoad() {
     document.body.appendChild(newContent);
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const restartButton = document.getElementById('restart-button');
+
+  restartButton.addEventListener('click', () => {
+    clearProgress();
+    loadBackgroundImage(require('../images/convergence-the-omen.jpg'));
+  });
+});
 
 export { loadBackgroundImage, initialLoad };
