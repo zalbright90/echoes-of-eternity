@@ -1,33 +1,37 @@
-# ES6 Webpack Template
+# Echoes of Eternity
 
-A template repository for using ES6 modules with npm and Webpack.
+Echoes of Eternity is a narrative-driven, interactive story set in a fantastical world where the boundaries between realms are blurred. The game is designed to explore themes of destiny, choice, and the interconnectedness of all things.
 
-## Getting Started
+## Gameplay
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/zalbright90/es6-webpack-template.git
-    ```
+The game is a branching narrative, with multiple endings based on player choices. The story unfolds in a non-linear fashion, with players making decisions that impact the course of events. The game features a rich and immersive world, filled with unique creatures, ancient artifacts, and mystical phenomena.
 
-2. Navigate to the directory:
-    ```bash
-    cd es6-webpack-template
-    ```
+### Gameplay Mechanics
 
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
+- Branching narrative: The story has multiple endings based on player choices, creating a unique and engaging experience for each playthrough.
+- Interactive choices: Players make decisions that affect the story, with consequences that can lead to different outcomes.
+- Non-linear story: The game unfolds in a non-linear fashion, with players able to revisit previous events and make different choices to alter the course of events.
+- Rich and immersive world: The game features a detailed and immersive world, filled with unique creatures, ancient artifacts, and mystical phenomena.
 
-4. Build the project:
-    ```bash
-    npm run build
-    ```
+### Controls
 
-5. Start the development server:
-    ```bash
-    npm start
-    ```
+- Mouse: Click on choices to make selections and advance the story.
+- Mobile: Tap choices to make selectiosn and advance the story.
+
+## Installation
+
+To play Echoes of Eternity:
+
+Visit [Echoes of Eternity](https://zalbright90.github.io/echoes-of-eternity) <-- Click Me!
+
+## Development
+
+Echoes of Eternity is a open-source project, and the source code is available on GitHub. If you're interested in contributing to the game, you can fork the repository and submit pull requests with your changes. Visit my [Linktree](https://linktr.ee/End0Skeleton), Discord is the easiest way to contact me.
+
+### Technologies Used
+
+- JavaScript: The game is written in JavaScript, used for rendering images and handling user input.
+- Git: The source code is version-controlled using Git, allowing for collaboration and easy tracking of changes.
 
 ## Project Structure
 
