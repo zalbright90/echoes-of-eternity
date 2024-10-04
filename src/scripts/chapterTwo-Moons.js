@@ -81,6 +81,39 @@ function loadChapterTwoMoons(choice) {
 // Flame Guardian Choice
 export function loadFlameGuardian() {
     loadBackgroundImage(require('../images/flame-guardian.jpg'));
+
+    const content = document.getElementById('content');
+    content.innerHTML = '';
+
+    const storyWrapper = document.createElement('div');
+    storyWrapper.classList.add('screen');
+
+    const chapterTitle = document.createElement('h2');
+    chapterTitle.classList.add('chapter-title');
+    chapterTitle.textContent = 'Chapter 2: The Prophecy Unvieled';
+    storyWrapper.appendChild(chapterTitle);
+
+    const pathTitle = document.createElement('h3');
+    pathTitle.classList.add('path-title');
+    pathTitle.textContent = 'The Chosen Ones - Flame Guardian';
+    storyWrapper.appendChild(pathTitle);
+
+    const sceneNarrative = document.createElement('p');
+    sceneNarrative.classList.add('narrative');
+    sceneNarrative.textContent = 'As you approach the figure wreathed in flames, the air around you grows warmer. The figures eyes open, revealing irises that dance with fire.';
+    storyWrapper.appendChild(sceneNarrative);
+
+    const sceneContinue = document.createElement('p');
+    sceneContinue.classList.add('narrative');
+    sceneContinue.textContent = '"I am Ignis, Guardian of the Eternal Flame," the figures voice crackling like a hearth. "You bear the mark of the Flame Seeker. The Crown of Eternity calls to you."';
+    storyWrapper.appendChild(sceneContinue);
+
+    const sceneConclusion = document.createElement('p');
+    sceneConclusion.classList.add('narrative');
+    sceneConclusion.textContent = 'Ignis extends a hand, revealing a small, flame-shaped crystal. "This Shard of Fire will guide you to the Crown, hidden within the heart of a dying star. But beware, for shadows seek to extinguish all light."';
+    storyWrapper.appendChild(sceneConclusion);
+
+    content.appendChild(storyWrapper);
 }
 
 export default loadChapterTwoMoons;
