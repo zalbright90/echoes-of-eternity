@@ -1,4 +1,4 @@
-import { createChoiceButtons, handleChoice } from './story';
+import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
 
 function loadChapterTwoMoons(choice) {
@@ -55,27 +55,14 @@ function loadChapterTwoMoons(choice) {
     const choiceList = document.createElement('ol');
     choiceList.className = 'choice-list';
     const choices = [
-        { text: "Approach the figure wreathed in flames." },
+        { text: "Approach the figure wreathed in flames.", value: 'flameGuardian' },
         { text: "Seek out the individual surrounded by a misty aura" },
         { text: "Move towards the person with vines and leaves swirling around them" }
     ];
     storyWrapper.appendChild(choiceList);
-
     createChoiceButtons(choices, storyWrapper);
-  } else {
-    switch (choice) {
-        case 'flameGuardian':
-            loadFlameGuardian();
-            break;
-        case 'mistWeaver':
-            loadMistWeaver();
-            break;
-        case 'earthShaper':
-            loadEarthShaper();
-            break;
-    }
+    content.appendChild(storyWrapper);
   }
-  content.appendChild(storyWrapper);
 }
 
 // Flame Guardian Choice
