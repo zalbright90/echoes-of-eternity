@@ -1,6 +1,6 @@
 import { loadBackgroundImage } from './initializer';
 import loadChapterOne, { loadInvestigateMoons, loadInvestigateSymbols, loadTriadFate, loadLookAround, loadSeekElder, loadAboutConvergence, loadAwakeningPowers, loadTextsProphecies, loadVisitTemple, loadMoons, loadRoleDestiny, loadNextSteps } from './chapterOne';
-import loadChapterTwoMoons, { loadFlameGuardian } from './chapterTwo-Moons';
+import loadChapterTwoMoons, { loadFlameGuardian, loadMistWeaver, loadEarthShaper } from './chapterTwo-Moons';
 
 function narrativeScreen() {
   loadChapterOne();
@@ -88,8 +88,16 @@ export function handleChoice(choice) {
           console.log('User chooses Flame Guardian...');
           loadFlameGuardian();
           break;
+        case 'mistWeaver':
+          console.log('User chooses Mist Weaver...');
+          loadMistWeaver();
+          break;
+        case 'earthShaper':
+          console.log('User chooses Earth Shaper...');
+          loadEarthShaper();
+          break;
       default:
-          console.log('Unknown choice');
+          console.log('Unknown choice; dev check import, switch case, and export');
           break;
   }
 }

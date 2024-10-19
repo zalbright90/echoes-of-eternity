@@ -56,8 +56,8 @@ function loadChapterTwoMoons(choice) {
     choiceList.className = 'choice-list';
     const choices = [
         { text: "Approach the figure wreathed in flames.", value: 'flameGuardian' },
-        { text: "Seek out the individual surrounded by a misty aura" },
-        { text: "Move towards the person with vines and leaves swirling around them" }
+        { text: "Seek out the individual surrounded by a misty aura", value: 'mistWeaver' },
+        { text: "Move towards the person with vines and leaves swirling around them", value: 'earthShaper' }
     ];
     storyWrapper.appendChild(choiceList);
     createChoiceButtons(choices, storyWrapper);
@@ -103,4 +103,79 @@ export function loadFlameGuardian() {
     content.appendChild(storyWrapper);
 }
 
+// Mist Weaver Choice
+export function loadMistWeaver() {
+  loadBackgroundImage(require('../images/mist-weaver.jpg'));
+
+  const content = document.getElementById('content');
+  content.innerHTML = '';
+
+  const storyWrapper = document.createElement('div');
+  storyWrapper.classList.add('screen');
+
+  const chapterTitle = document.createElement('h2');
+  chapterTitle.classList.add('chapter-title');
+  chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
+  storyWrapper.appendChild(chapterTitle);
+
+  const pathTitle = document.createElement('h3');
+  pathTitle.classList.add('path-title');
+  pathTitle.textContent = 'The Chosen Ones - Mist Weaver';
+  storyWrapper.appendChild(pathTitle);
+
+  const sceneNarrative = document.createElement('p');
+  sceneNarrative.classList.add('narrative');
+  sceneNarrative.textContent = 'You make your way to the figure surrounded by a misty aura. As you draw near, you feel a cool, refreshing sensation wash over you. The figures eyes open, revealing swirling pools of blue and grey.';
+  storyWrapper.appendChild(sceneNarrative);
+
+  const sceneContinue = document.createElement('p');
+  sceneContinue.classList.add('narrative');
+  sceneContinue.textContent = '"Welcome, Tide Caller. I am Aquarius, Keeper of the Endless Depths," the figure says, their voice like water flowing over stones. "The Chalice of Souls resonates with your spirit."';
+  storyWrapper.appendChild(sceneContinue);
+
+  const sceneConclusion = document.createElement('p');
+  sceneConclusion.classList.add('narrative');
+  sceneConclusion.textContent = 'Aquarius holds out a hand, a small, droplet-shaped pearl resting in their palm. "This Pearl of the Abyss will lead you to the Chalice, hidden in the deepest trench of the Primordial Ocean. But be warned, dark currents seek to drag the realms into chaos.';
+  storyWrapper.appendChild(sceneConclusion);
+
+  content.appendChild(storyWrapper);
+}
+
+// Earth Shaper Choice
+export function loadEarthShaper() {
+  loadBackgroundImage(require('../images/earth-shaper.jpg'));
+
+  const content = document.getElementById('content');
+  content.innerHTML = '';
+
+  const storyWrapper = document.createElement('div');
+  storyWrapper.classList.add('screen');
+
+  const chapterTitle = document.createElement('h2');
+  chapterTitle.classList.add('chapter-title');
+  chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
+  storyWrapper.appendChild(chapterTitle);
+
+  const pathTitle = document.createElement('h3');
+  pathTitle.classList.add('path-title');
+  pathTitle.textContent = 'The Chosen Ones - Earth Shaper';
+  storyWrapper.appendChild(pathTitle);
+
+  const sceneNarrative = document.createElement('p');
+  sceneNarrative.classList.add('narrative');
+  sceneNarrative.textContent = 'You approach the person with vines and leaves swirling around them. The ground beneath your feet seems to hum with energy. The figures eyes open, revealing irises of deep, rich brown flecked with green, red and yellow.';
+  storyWrapper.appendChild(sceneNarrative);
+
+  const sceneContinue = document.createElement('p');
+  sceneContinue.classList.add('narrative');
+  sceneContinue.textContent = '"Greetings, Root Weaver. I am Terra, Voice of the Ancient Groves," the figure speaks, their words resonating like a deep drumbeat. "The Codex of Realms calls for your touch."';
+  storyWrapper.appendChild(sceneContinue);
+
+  const sceneConclusion = document.createElement('p');
+  sceneConclusion.classList.add('narrative');
+  sceneConclusion.textContent = 'Terra presents you with a seed that glows with an inner light. "This Seed of Yggdrasil will guide you to the Codex, nestled in the heart of the World Tree. But tread carefully, for parasitic forces seek to corrupt the tree and unravel the fabric of reality."';
+  storyWrapper.appendChild(sceneConclusion);
+
+  content.appendChild(storyWrapper);
+}
 export default loadChapterTwoMoons;
