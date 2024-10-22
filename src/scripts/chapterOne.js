@@ -1,6 +1,7 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
 import loadChapterTwoMoons from './chapterTwo-Moons';
+import loadChapterTwoElders from './chapterTwo-Elder'
 
 function loadChapterOne(choice) {
     const content = document.getElementById('content');
@@ -367,6 +368,13 @@ export function loadAboutConvergence() {
   storyWrapper.appendChild(voiceEcho);
 
   // Add logic to go to Chapter 2 from Seek Elder
+  const continueButton = document.createElement('button');
+  continueButton.textContent = 'Continue to Chapter Two - Forgotton Ones Path';
+  continueButton.classList.add('choice-button');
+  storyWrapper.appendChild(continueButton);
+  continueButton.addEventListener('click', () => {
+    loadChapterTwoElders();
+  });
 
   content.appendChild(storyWrapper);
 }
@@ -406,6 +414,13 @@ export function loadAwakeningPowers() {
   storyWrapper.appendChild(voiceEcho);
 
   // Add logic to go to Chapter 2 from Seek Elder
+  const continueButton = document.createElement('button');
+  continueButton.textContent = 'Continue to Chapter Two - Forgotton Ones Path';
+  continueButton.classList.add('choice-button');
+  storyWrapper.appendChild(continueButton);
+  continueButton.addEventListener('click', () => {
+    loadChapterTwoElders();
+  });
 
   content.appendChild(storyWrapper);
 }
@@ -449,6 +464,13 @@ export function loadTextsProphecies() {
   storyWrapper.appendChild(sceneConclusion);
 
   // Add logic to go to Chapter 2 from Seek Elder
+  const continueButton = document.createElement('button');
+  continueButton.textContent = 'Continue to Chapter Two - Forgotton Ones Path';
+  continueButton.classList.add('choice-button');
+  storyWrapper.appendChild(continueButton);
+  continueButton.addEventListener('click', () => {
+    loadChapterTwoElders();
+  });
 
   content.appendChild(storyWrapper);
 }

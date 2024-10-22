@@ -24,7 +24,7 @@ function loadChapterTwoMoons(choice) {
 
     const infoParagraph = document.createElement('p');
     infoParagraph.classList.add('info');
-    infoParagraph.textContent = 'You, The Chosen One, have been chose to embark on a journey to the elemental realms. Through a combination of scholarly research, adventurous exploration, and mystical insight, you have gained the following knowledge so far:';
+    infoParagraph.textContent = 'You, The Chosen Ones, have been chose to embark on a journey to the elemental realms. Through a combination of scholarly research, adventurous exploration, and mystical insight, you have gained the following knowledge so far: Strange symbols have appeared on your bodies, marking you as the ones selected by the elemental forces for a higher purpose. You have begun to understand the basic structure of the elemental realms and how the forces of nature interact within you. You have received cryptic guidance from ancient beings regarding their mission to restore balance to the elemental realms.';
     storyWrapper.appendChild(infoParagraph);
 
     const sceneNarrative = document.createElement('p');
@@ -53,7 +53,7 @@ function loadChapterTwoMoons(choice) {
     storyWrapper.appendChild(choiceQuestion);
 
     const choiceList = document.createElement('ol');
-    choiceList.className = 'choice-list';
+    choiceList.classList.add = 'choice-list';
     const choices = [
         { text: "Approach the figure wreathed in flames.", value: 'flameGuardian' },
         { text: "Seek out the individual surrounded by a misty aura", value: 'mistWeaver' },

@@ -1,6 +1,11 @@
 import { loadBackgroundImage } from './initializer';
+
 import loadChapterOne, { loadInvestigateMoons, loadInvestigateSymbols, loadTriadFate, loadLookAround, loadSeekElder, loadAboutConvergence, loadAwakeningPowers, loadTextsProphecies, loadVisitTemple, loadMoons, loadRoleDestiny, loadNextSteps } from './chapterOne';
+
 import loadChapterTwoMoons, { loadFlameGuardian, loadMistWeaver, loadEarthShaper } from './chapterTwo-Moons';
+
+import loadChapterTwoElders, { loadReadTome } from './chapterTwo-Elder';
+
 
 function narrativeScreen() {
   loadChapterOne();
@@ -95,6 +100,14 @@ export function handleChoice(choice) {
         case 'earthShaper':
           console.log('User chooses Earth Shaper...');
           loadEarthShaper();
+          break;
+      case 'chapterTwoElders':
+        console.log('User seeks the elders...');
+        loadChapterTwoElders();
+        break;
+        case 'readTome':
+          console.log('User reads from the tome...');
+          loadReadTome();
           break;
       default:
           console.log('Unknown choice; dev check import, switch case, and export');

@@ -140,7 +140,7 @@ body {
 
 .narrative {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.2;
   color: #121212;
   margin-bottom: 20px;
   text-align: left;
@@ -161,7 +161,6 @@ body {
 }
 
 .knowledge-list {
-  margin-top: 10px;
   list-style-type: none;
   padding: 0;
   display: flex;
