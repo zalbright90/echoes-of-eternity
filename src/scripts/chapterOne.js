@@ -1,5 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
+import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createContinueButton } from './storyUtils';
 import loadChapterTwoMoons from './chapterTwo-Moons';
 import loadChapterTwoElders from './chapterTwo-Elder'
 
@@ -12,46 +13,21 @@ function loadChapterOne(choice) {
 
   // Start of the story
     if (!choice) {
-        const actTitle = document.createElement('h1');
-        actTitle.classList.add('title');
-        actTitle.textContent = 'Act I: The Convergence Begins';
-        storyWrapper.appendChild(actTitle);
+        storyWrapper.appendChild(createAct('Act I: The convergences Begins'));
+      
+        storyWrapper.appendChild(createScene('As the celestial convergence draws near, strange phenomena begin to unfold across Varathis—a newly formed nation in the year 2068. In a world reshaped by the aftermath of World War III, Earth is no longer as we know it, and the fabric of reality itself seems to fray at the edges.'));
 
-        const sceneSetting = document.createElement('p');
-        sceneSetting.classList.add('info');
-        sceneSetting.textContent = 'As the celestial convergence draws near, strange phenomena begin to unfold across Varathis—a newly formed nation in the year 2068. In a world reshaped by the aftermath of World War III, Earth is no longer as we know it, and the fabric of reality itself seems to fray at the edges.';
-        storyWrapper.appendChild(sceneSetting);
+        storyWrapper.appendChild(createTitle('Chapter 1: The Omen'));
 
-        const chapterTitle = document.createElement('h2');
-        chapterTitle.classList.add('chapter-title');
-        chapterTitle.textContent = 'Chapter 1: The Omen';
-        storyWrapper.appendChild(chapterTitle);
-
-        const sceneNarrative = document.createElement('p');
-        sceneNarrative.classList.add('narrative');
-        sceneNarrative.textContent = 'The air in Varathis crackled with an otherworldly energy as the celestial Convergence approached. You find yourself in the bustling market square of Aethoria, the City of a Thousand Spires. The normally vibrant atmosphere is tinged with an undercurrent of unease. As you weave through the crowd, you overhear whispered conversations about strange occurrences and inexplicable phenomena. Suddenly, a commotion erupts near the central fountain. A group of people has gathered, pointing at the sky. You look up and see an extraordinary sight: three moons, each a different color, have appeared in the daylight sky.';
-        storyWrapper.appendChild(sceneNarrative);
-
-        const choiceQuestion = document.createElement('p');
-        choiceQuestion.classList.add('choice-section');
-        choiceQuestion.textContent = 'What do you do?';
-        storyWrapper.appendChild(choiceQuestion);
-
-        const choiceList = document.createElement('ol');
-        choiceList.className = 'choice-list';
-
-        const firstChoice = document.createElement('li');
-        firstChoice.textContent = 'Push through the crowd to get a closer look at the moons.';
-        choiceList.appendChild(firstChoice);
-
-        const secondChoice = document.createElement('li');
-        secondChoice.textContent = 'Seek out a local Elder to understand the meaning of this event.';
-        choiceList.appendChild(secondChoice);
-
-        const thirdChoice = document.createElement('li');
-        thirdChoice.textContent = 'Head to the nearest temple to consult with the priests.';
-        choiceList.appendChild(thirdChoice);
-
+        storyWrapper.appendChild(createParagraph('The air in Varathis crackled with an otherworldly energy as the celestial Convergence approached. You find yourself in the bustling market square of Aethoria, the City of a Thousand Spires. The normally vibrant atmosphere is tinged with an undercurrent of unease. As you weave through the crowd, you overhear whispered conversations about strange occurrences and inexplicable phenomena. Suddenly, a commotion erupts near the central fountain. A group of people has gathered, pointing at the sky. You look up and see an extraordinary sight: three moons, each a different color, have appeared in the daylight sky.'));
+        
+        storyWrapper.appendChild(createQuestion('What do you do?'));
+        
+        const choiceList = createChoiceList([
+        'Push through the crowd to get a closer look at the moons.',
+        'Seek out a local Elder to understand the meaning of this event.',
+        'Head to the nearest temple to consult with the priests.'
+        ]);
         storyWrapper.appendChild(choiceList);
 
         const choices = [
@@ -87,10 +63,7 @@ export function loadInvestigateMoons() {
     const storyWrapper = document.createElement('div');
     storyWrapper.classList.add('screen');
     
-    const chapterTitle = document.createElement('h2');
-    chapterTitle.classList.add('chapter-title');
-    chapterTitle.textContent = 'Choice 1: Investigate the Moons';
-    storyWrapper.appendChild(chapterTitle);
+    storyWrapper.appendChild(createTitle('Choice 1: Investigate the Moons'));
   
     const sceneNarrative = document.createElement('p');
     sceneNarrative.classList.add('narrative');
