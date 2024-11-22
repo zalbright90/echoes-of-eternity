@@ -5,13 +5,13 @@ function loadChapterTwoMoons(choice) {
     loadBackgroundImage(require('../images/elemental-figures.jpg'));
 
     const content = document.getElementById('content');
-  content.innerHTML = '';
+    content.innerHTML = '';
 
-  const storyWrapper = document.createElement('div');
-  storyWrapper.classList.add('screen');
+    const storyWrapper = document.createElement('div');
+    storyWrapper.classList.add('screen');
 
-  // Start of Chapter Two - Investigate Moons Pathway
-  if (!choice) {
+    // Start of Chapter Two - Investigate Moons Pathway
+    if (!choice) {
     const chapterTitle = document.createElement('h2');
     chapterTitle.classList.add('chapter-title');
     chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';

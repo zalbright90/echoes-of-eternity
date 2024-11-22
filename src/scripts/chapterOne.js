@@ -119,6 +119,7 @@ export function loadInvestigateSymbols() {
     const continueButton = createContinueButton('Continue to Chapter 2 - Chosen One Path', loadChapterTwoMoons);
     storyWrapper.appendChild(continueButton);
 
+
     content.appendChild(storyWrapper);
 }
 
@@ -145,6 +146,7 @@ export function loadTriadFate() {
     const continueButton = createContinueButton('Continue to Chapter Two - Chosen One Path', loadChapterTwoMoons);
     storyWrapper.appendChild(continueButton);
 
+
     content.appendChild(storyWrapper);
 }
 
@@ -168,6 +170,7 @@ export function loadLookAround() {
     // Add logic to go to Chapter 2 from investigating moons
     const continueButton = createContinueButton('Continue to Chapter Two - Chosen One Path', loadChapterTwoMoons);
     storyWrapper.appendChild(continueButton);
+
 
     content.appendChild(storyWrapper);
 }
@@ -202,9 +205,9 @@ export function loadSeekElder() {
     ];
   
     createChoiceButtons(choices, storyWrapper);
+
+    
     content.appendChild(storyWrapper);
-  
-    return storyWrapper;
 }
 
 // Choice 2 Pathway choices
