@@ -1,3 +1,5 @@
+import { loadProgress } from './story';
+
 function createStartScreen() {
 
     const startScreen = document.createElement('div');

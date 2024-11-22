@@ -33,6 +33,13 @@ export function createQuestion(text, className = 'choice-section') {
     return question;
 }
 
+export function createVoiceEcho(text, className = 'voice-echo') {
+    const voiceEcho = document.createElement('em');
+    voiceEcho.classList.add(className);
+    voiceEcho.textContent = text;
+    return voiceEcho;
+}
+
 export function createChoiceList(choices) {
     const choiceList = document.createElement('ol');
     choiceList.className = 'choice-list';

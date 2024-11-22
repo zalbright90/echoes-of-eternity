@@ -1,5 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from "./story";
 import { loadBackgroundImage } from "./initializer";
+import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, createContinueButton } from './storyUtils';
 
 function loadChapterTwoTemple(choice) {
     loadBackgroundImage(require('../images/temple-mosaic.jpg'));
@@ -12,9 +13,9 @@ function loadChapterTwoTemple(choice) {
 
     // Start of Chapter Two - Consult the Temple
     if (!choice) {
-        const chapterTitle = document.createElement('h2');
-        chapterTitle.classList.add('chapter-title');
-        chapterTitle.textContent = 'Chapter 2: The Unveiled Prophecy';
-        storyWrapper.appendChild(chapterTitle;)
+        storyWrapper.appendChild(createTitle('Chapter 2: The Unveiled Prophecy'));
     }
+    content.appendChild(storyWrapper);
 }
+
+export default loadChapterTwoTemple;

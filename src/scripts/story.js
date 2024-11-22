@@ -116,23 +116,45 @@ export function handleChoice(choice) {
 }
 
 // Create a function to save reader progress
-export function saveProgress(choice) {
-  localStorage.setItem('storyProgress', JSON.stringify(choice));
-  console.log('Progress Saved');
+export function saveProgress(progressData) {
+  try {
+    if (typeof progressData !== 'object') {
+        throw new Error('progress data must be an object');
+    }
+    const existingProgress = loadProgress() || {};
+    const updatedProgress = { ...existingProgress, ...progressData};
+
+    localStorage.setItem('storyProgress', JSON.stringify(updatedProgress));
+    console.log('Progress Saved: ', updatedProgress);
+  } catch (error) {
+    console.error('Error saving progress: ', error);
+  }
 }
 
 // Create a function to load reader progress
 export function loadProgress() {
-  const savedChoice = localStorage.getItem('storyProgress');
-  console.log('Progress Loaded');
-  return savedChoice ? JSON.parse(savedChoice) : null;
+    try {
+        const savedData = localStorage.getItem('storyProgress');
+        console.log('Progress Loaded');
+        return savedData? JSON.parse(savedData) : null;
+    } catch (error) {
+        console.error('Error loading progress:', error);
+        return null;
+    }
 }
 
 // Clear progress if player wants to start over
 export function clearProgress() {
-  localStorage.removeItem('storyProgress');
-  console.log('Progress cleared');
-  narrativeScreen();
+  try {
+    localStorage.removeItem('storyProgress');
+    console.log('Progress cleared');
+
+    if (typeof callback === 'function') {
+        callback();
+    }
+  } catch (error) {
+    console.error('Error clearing progress:', error);
+  }
 }
 
 export default narrativeScreen;
