@@ -33,9 +33,6 @@ export function createChoiceButtons(choices, parentElement) {
 
 // Function to handle user choices
 export function handleChoice(choice) {
-
-  saveProgress(choice);
-
   switch (choice) {
       case 'investigateMoons':
           console.log('User pushes through crowd...');
@@ -86,7 +83,7 @@ export function handleChoice(choice) {
             loadNextSteps();
             break;
       case 'chapterTwoMoons':
-        console.log('User as progress to Chapter 2 from investigating the moons...');
+        console.log('User has progressed to Chapter 2 from investigating the moons...');
         loadChapterTwoMoons();
         break;
         case 'flameGuardian':

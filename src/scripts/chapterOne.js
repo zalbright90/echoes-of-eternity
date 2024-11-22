@@ -1,18 +1,18 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
-import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, createContinueButton } from './storyUtils';
+import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho } from './storyUtils';
 import loadChapterTwoMoons from './chapterTwo-Moons';
 import loadChapterTwoElders from './chapterTwo-Elder';
 import loadChapterTwoTemple from './chapterTwo-Temple';
 
 function loadChapterOne(choice) {
     const content = document.getElementById('content');
-  content.innerHTML = '';
+    content.innerHTML = '';
 
     const storyWrapper = document.createElement('div');
-  storyWrapper.classList.add('screen');
+    storyWrapper.classList.add('screen');
 
-  // Start of the story
+    // Start of the story
     if (!choice) {
         storyWrapper.appendChild(createAct('Act I: The convergences Begins'));
       
@@ -25,9 +25,9 @@ function loadChapterOne(choice) {
         storyWrapper.appendChild(createQuestion('What do you do?'));
         
         const choiceList = createChoiceList([
-        'Push through the crowd to get a closer look at the moons.',
-        'Seek out a local Elder to understand the meaning of this event.',
-        'Head to the nearest temple to consult with the priests.'
+            'Push through the crowd to get a closer look at the moons.',
+            'Seek out a local Elder to understand the meaning of this event.',
+            'Head to the nearest temple to consult with the priests.'
         ]);
         storyWrapper.appendChild(choiceList);
 
@@ -38,7 +38,7 @@ function loadChapterOne(choice) {
         ];
         createChoiceButtons(choices, storyWrapper);
     } else {
-        switch (choice) {
+        switch (handleChoice) {
             case 'investigateMoons':
                 loadInvestigateMoons();
                 break;
@@ -51,7 +51,7 @@ function loadChapterOne(choice) {
         }
     }
 
-  content.appendChild(storyWrapper);
+    content.appendChild(storyWrapper);
 }
 
 // Choice 1 Pathway
@@ -83,7 +83,6 @@ export function loadInvestigateMoons() {
         { text: 'Ask about Triad of Fate', value: 'triadFate' },
         { text: 'Look for others', value: 'lookAround' }
     ];
-  
     createChoiceButtons(choices, storyWrapper);
     content.appendChild(storyWrapper);
 }
@@ -116,9 +115,10 @@ export function loadInvestigateSymbols() {
     storyWrapper.appendChild(createVoiceEcho('"Seeker, the balance is broken. The Elemental Realms cry out for restoration."'));
 
     // Add button and logic to go to chapter 2 based on investigating moons
-    const continueButton = createContinueButton('Continue to Chapter 2 - Chosen One Path', loadChapterTwoMoons);
-    storyWrapper.appendChild(continueButton);
-
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Chosen Ones', value: 'chapterTwoMoons'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
     content.appendChild(storyWrapper);
 }
@@ -143,8 +143,10 @@ export function loadTriadFate() {
     storyWrapper.appendChild(createVoiceEcho('"The scrolls also speak of chosen ones, marked by elements, who must restore balance to the realms. The fate of all existence hangs in the balance!"'));
 
     // Logic to go to chapter 2 from Investigate Moons
-    const continueButton = createContinueButton('Continue to Chapter Two - Chosen One Path', loadChapterTwoMoons);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Chosen Ones', value: 'chapterTwoMoons'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
 
     content.appendChild(storyWrapper);
@@ -168,8 +170,10 @@ export function loadLookAround() {
     storyWrapper.appendChild(createParagraph('As you lock eyes with them, the symbols seem to resonate with one another. You get a faint sense that your fates are intertwined, but also distinct—each of you connected to one of the realms.'));
 
     // Add logic to go to Chapter 2 from investigating moons
-    const continueButton = createContinueButton('Continue to Chapter Two - Chosen One Path', loadChapterTwoMoons);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Chosen Ones', value: 'chapterTwoMoons'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
 
     content.appendChild(storyWrapper);
@@ -230,8 +234,10 @@ export function loadAboutConvergence() {
     storyWrapper.appendChild(createVoiceEcho('"But with great potential comes great danger. The last time such an alignment occurred, it led to the Age of Chaos, a period of strife that nearly tore the fabric of reality apart."'));
 
     // Add logic to go to Chapter 2 from Seek Elder
-    const continueButton = createContinueButton('Continue to Chapter Two - Forgotten Ones Path', loadChapterTwoElders);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Forgotten Ones', value: 'chapterTwoElders'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
 
     content.appendChild(storyWrapper);
@@ -257,8 +263,10 @@ export function loadAwakeningPowers() {
     storyWrapper.appendChild(createVoiceEcho('"The Convergence weakens the barriers that have kept these relics hidden for millennia. Their power will soon awaken, and they must be found and united by those chosen to bear them. If they fall into the wrong hands, or if they are not brought together in time, the consequences could be catastrophic."'));
 
     // Add logic to go to Chapter 2 from Seek Elder
-    const continueButton = createContinueButton('Continue to Chapter Two - Forgotten Ones Path', loadChapterTwoElders);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Forgotten Ones', value: 'chapterTwoElders'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
 
     content.appendChild(storyWrapper);
@@ -285,8 +293,10 @@ export function loadTextsProphecies() {
     storyWrapper.appendChild(createParagraph('The words resonate in the chamber, carrying with them a weight of destiny and consequence. Elowen gazes at you, her eyes alight with purpose, as the realization of the task ahead settles upon your shoulders.'));
 
     // Add logic to go to Chapter 2 from Seek Elder
-    const continueButton = createContinueButton('Continue to Chapter Two - Forgotton Ones Path', loadChapterTwoElders);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Forgotten Ones', value: 'chapterTwoElders'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
 
     content.appendChild(storyWrapper);
@@ -344,8 +354,10 @@ export function loadMoons() {
     storyWrapper.appendChild(createVoiceEcho('"Each moon holds correspondence to one of the Lost Relics. The golden moon to the Crown of Eternity, the silver to the Chalice of Souls, and the emerald to the Codex of Realms. Their alignment not only signifies the potential rediscovery of the relics, but also the imperative need for their retrieval, for the preservation of all existence."'));
 
   // Add logic to go to Chapter 2 from Visit Temple
-    const continueButton = createContinueButton('Continue to Chapter Two - The Hidden Ones Path', loadChapterTwoTemple);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Hidden Ones', value: 'chapterTwoTemple'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
     content.appendChild(storyWrapper);
 }
@@ -372,8 +384,10 @@ export function loadRoleDestiny() {
     storyWrapper.appendChild(createVoiceEcho('"This is the Orb of Destiny, an artifact that will reveal fleeting glimpses of the path that beckons you. However, know this: the future remains a composition of choices, unbound by the strictures of destiny. Your decisions will not only sculpt your own fate but reverberate through the tapestries of all realms."'));
 
     // Add logic to go to Chapter 2 from Visit Temple
-    const continueButton = createContinueButton('Continue to Chapter Two - The Hidden Ones Path', loadChapterTwoTemple);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Hidden Ones', value: 'chapterTwoTemple'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
     content.appendChild(storyWrapper);
 }
@@ -405,8 +419,10 @@ export function loadNextSteps() {
     storyWrapper.appendChild(createVoiceEcho('"The path will be fraught with peril, burdened with weighty responsibility. Nevertheless, remember, you were endowed with the mantle of chosenness for a reason. Place trust in your inherent strength and in the harmonious equilibrium of the cosmos."'));
 
     // Add logic to go to Chapter 2 from Visit Temple
-    const continueButton = createContinueButton('Continue to Chapter Two - The Hidden Ones Path', loadChapterTwoTemple);
-    storyWrapper.appendChild(continueButton);
+    const choices = [
+        { text: 'Chapter Two - The Unveiled Prophecy: The Hidden Ones', value: 'chapterTwoTemple'}
+    ];
+    createChoiceButtons(choices, storyWrapper);
 
     content.appendChild(storyWrapper);
 }

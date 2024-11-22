@@ -40,6 +40,13 @@ export function createVoiceEcho(text, className = 'voice-echo') {
     return voiceEcho;
 }
 
+export function createPathTitle(text, className = 'path-title') {
+    const pathTitle = document.createElement('h3');
+    pathTitle.classList.add(className);
+    pathTitle.textContent = text;
+    return pathTitle;
+}
+
 export function createChoiceList(choices) {
     const choiceList = document.createElement('ol');
     choiceList.className = 'choice-list';
@@ -49,12 +56,4 @@ export function createChoiceList(choices) {
         choiceList.appendChild(listItem);
     });
     return choiceList;
-}
-
-export function createContinueButton(text, callback) {
-    const button = document.createElement('button');
-    button.textContent = text;
-    button.classList.add('choice-button');
-    button.addEventListener('click', callback);
-    return button;
 }

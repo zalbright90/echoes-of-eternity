@@ -1,5 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
+import { createTitle, createPathTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, createContinueButton } from './storyUtils';
 
 function loadChapterTwoMoons(choice) {
     loadBackgroundImage(require('../images/elemental-figures.jpg'));
@@ -12,57 +13,51 @@ function loadChapterTwoMoons(choice) {
 
     // Start of Chapter Two - Investigate Moons Pathway
     if (!choice) {
-    const chapterTitle = document.createElement('h2');
-    chapterTitle.classList.add('chapter-title');
-    chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
-    storyWrapper.appendChild(chapterTitle);
-
-    const pathTitle = document.createElement('h3');
-    pathTitle.classList.add('path-title');
-    pathTitle.textContent = 'The Chosen Ones';
-    storyWrapper.appendChild(pathTitle);
-
-    const infoParagraph = document.createElement('p');
-    infoParagraph.classList.add('info');
-    infoParagraph.textContent = 'You, The Chosen Ones, have been chose to embark on a journey to the elemental realms. Through a combination of scholarly research, adventurous exploration, and mystical insight, you have gained the following knowledge so far: Strange symbols have appeared on your bodies, marking you as the ones selected by the elemental forces for a higher purpose. You have begun to understand the basic structure of the elemental realms and how the forces of nature interact within you. You have received cryptic guidance from ancient beings regarding their mission to restore balance to the elemental realms.';
-    storyWrapper.appendChild(infoParagraph);
-
-    const sceneNarrative = document.createElement('p');
-    sceneNarrative.classList.add('narrative');
-    sceneNarrative.textContent = 'As you make your way through the streets of Aethoria, the visions and symbols from before still burn in your mind. The voice—deep, ancient—whispers again:';
-    storyWrapper.appendChild(sceneNarrative);
-
-    const voiceEcho = document.createElement('em');
-    voiceEcho.classList.add('voice-echo');
-    voiceEcho.textContent = '"Seeker, the Elemental Realms cry out for restoration. The path you choose will shape the future."';
-    storyWrapper.appendChild(voiceEcho);
-
-    const sceneContinue = document.createElement('p');
-    sceneContinue.classList.add('narrative');
-    sceneContinue.textContent = 'As you ponder the meaning of these words, you notice that the crowds are all moving in one direction - towards the Grand Temple of Elements. The normally pristine white marble of the temple seems to shimmer with an array of colors, reflecting the hues of the three moons still visible in the sky. Your symbol pulses, and you feel it pulling you toward the temple steps.';
-    storyWrapper.appendChild(sceneContinue);
-
-    const sceneConclusion = document.createElement('p');
-    sceneConclusion.classList.add('narrative');
-    sceneConclusion.textContent = 'Three figures stand at the entrance, each radiating an energy that corresponds to the elements of your vision. Their presence is undeniable, and you realize these figures hold the answers you seek—but which one will guide you?';
-    storyWrapper.appendChild(sceneConclusion);
+        storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
     
-    const choiceQuestion = document.createElement('p');
-    choiceQuestion.classList.add('choice-section');
-    choiceQuestion.textContent = 'What do you do?';
-    storyWrapper.appendChild(choiceQuestion);
+        storyWrapper.appendChild(createPathTitle('The Chosen Ones'));
 
-    const choiceList = document.createElement('ol');
-    choiceList.classList.add = 'choice-list';
-    const choices = [
-        { text: "Approach the figure wreathed in flames.", value: 'flameGuardian' },
-        { text: "Seek out the individual surrounded by a misty aura", value: 'mistWeaver' },
-        { text: "Move towards the person with vines and leaves swirling around them", value: 'earthShaper' }
-    ];
-    storyWrapper.appendChild(choiceList);
-    createChoiceButtons(choices, storyWrapper);
+        storyWrapper.appendChild(createScene('You, The Chosen Ones, have been chose to embark on a journey to the elemental realms. Through a combination of scholarly research, adventurous exploration, and mystical insight, you have gained the following knowledge so far: Strange symbols have appeared on your bodies, marking you as the ones selected by the elemental forces for a higher purpose. You have begun to understand the basic structure of the elemental realms and how the forces of nature interact within you. You have received cryptic guidance from ancient beings regarding their mission to restore balance to the elemental realms.'));
+
+        storyWrapper.appendChild(createParagraph('As you make your way through the streets of Aethoria, the visions and symbols from before still burn in your mind. The voice—deep, ancient—whispers again:'));
+
+        storyWrapper.appendChild(createVoiceEcho('"Seeker, the Elemental Realms cry out for restoration. The path you choose will shape the future."'));
+
+        storyWrapper.appendChild(createParagraph('As you ponder the meaning of these words, you notice that the crowds are all moving in one direction - towards the Grand Temple of Elements. The normally pristine white marble of the temple seems to shimmer with an array of colors, reflecting the hues of the three moons still visible in the sky. Your symbol pulses, and you feel it pulling you toward the temple steps.'));
+
+        storyWrapper.appendChild(createParagraph('Three figures stand at the entrance, each radiating an energy that corresponds to the elements of your vision. Their presence is undeniable, and you realize these figures hold the answers you seek—but which one will guide you?'));
+
+        storyWrapper.appendChild(createQuestion('What do you do?'));
+
+
+        const choiceList = createChoiceList([
+            'Approach the figure wreathed in flames.',
+            'Seek out the individual surrounded by a misty aura.',
+            'Move towards the person with vines and leaves swirling around them.'
+        ]);
+        storyWrapper.appendChild(choiceList);
+
+        const choices = [
+            { text: "Fiery individual", value: 'flameGuardian' },
+            { text: "Misty individual", value: 'mistWeaver' },
+            { text: "Leafy individual", value: 'earthShaper' }
+        ];
+        createChoiceButtons(choices, storyWrapper);
+
+    } else {
+        switch (handleChoice) {
+            case 'flameGuardian':
+                loadFlameGuardian();
+                break;
+            case 'mistWeaver':
+                loadMistWeaver();
+                break;
+            case 'earthShaper':
+                loadEarthShaper();
+                break;
+        }   
+    }
     content.appendChild(storyWrapper);
-  }
 }
 
 // Flame Guardian Choice
@@ -178,4 +173,5 @@ export function loadEarthShaper() {
 
   content.appendChild(storyWrapper);
 }
+
 export default loadChapterTwoMoons;
