@@ -1,7 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story'
-
 import { loadBackgroundImage } from './initializer'
-
+import { createTitle, createPathTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho } from './storyUtils';
 import { createItemList } from './itemListModule'
 
 function loadChapterTwoElders(choice) {
@@ -15,57 +14,50 @@ function loadChapterTwoElders(choice) {
 
     // Start of Chapter Two - Seek an Elder
     if (!choice) {
-        const chapterTitle = document.createElement('h2');
-        chapterTitle.classList.add('chapter-title');
-        chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
-        storyWrapper.appendChild(chapterTitle);
+        storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
 
-        const pathTitle = document.createElement('h3');
-        pathTitle.classList.add('path-title');
-        pathTitle.textContent = 'The Forgotten Ones';
-        storyWrapper.appendChild(pathTitle);
+        storyWrapper.appendChild(createPathTitle('The Forgotten Ones'));
 
-        const infoParagraph = document.createElement('p');
-        infoParagraph.classList.add('info');
-        infoParagraph.textContent = 'You, the Forgotten Ones, walk a path unseen by many but vital to the fabric of the realms. Cast aside by fate, you must forge your own destiny. Through your keen intuition, hidden knowledge, and relentless pursuit of the unknown, you have uncovered the following insights so far: You have uncovered that your path is one of secrecy, with forgotten knowledge about the elemental realms only known to few. Through old, hidden manuscripts and ancient artifacts, you have and will learn how to unlock portions of elemental power, though at a cost unknown to others. You have learned of unseen, perhaps dangerous, connections between your reality and the elemental realms, which no one else has discovered.';
-        storyWrapper.appendChild(infoParagraph);
+        storyWrapper.appendChild(createScene('You, the Forgotten Ones, walk a path unseen by many but vital to the fabric of the realms. Cast aside by fate, you must forge your own destiny. Through your keen intuition, hidden knowledge, and relentless pursuit of the unknown, you have uncovered the following insights so far: You have uncovered that your path is one of secrecy, with forgotten knowledge about the elemental realms only known to few. Through old, hidden manuscripts and ancient artifacts, you have and will learn how to unlock portions of elemental power, though at a cost unknown to others. You have learned of unseen, perhaps dangerous, connections between your reality and the elemental realms, which no one else has discovered.'))
 
-        const sceneNarrative = document.createElement('p');
-        sceneNarrative.classList.add('narrative');
-        sceneNarrative.textContent = 'The Grand Library of Aethoria hums with frantic energy as scholars and researchers rush about, pulling ancient tomes from shelves and arguing in hushed, urgent tones. Magister Elowen leads you through the chaos to a hidden door at the back of the library, and she ushers you into a secret chamber.';
-        storyWrapper.appendChild(sceneNarrative);
+        storyWrapper.appendChild(createParagraph('The Grand Library of Aethoria hums with frantic energy as scholars and researchers rush about, pulling ancient tomes from shelves and arguing in hushed, urgent tones. Magister Elowen leads you through the chaos to a hidden door at the back of the library, and she ushers you into a secret chamber.'));
 
-        const voiceEcho = document.createElement('em');
-        voiceEcho.classList.add('voice-echo');
-        voiceEcho.textContent = 'The Convergence has awakened something ancient and powerful...';
-        storyWrapper.appendChild(voiceEcho);
+        storyWrapper.appendChild(createVoiceEcho('The Convergence has awakened something ancient and powerful...'));
 
-        const sceneContinue = document.createElement('p');
-        sceneContinue.classList.add('narrative');
-        sceneContinue.textContent = 'Inside, a group of diverse individuals are gathered around a large, circular table. On the table lies an ornate book, its pages glowing with an otherworldly light.';
-        storyWrapper.appendChild(sceneContinue);
+        storyWrapper.appendChild(createParagraph('Inside, a group of diverse individuals are gathered around a large, circular table. On the table lies an ornate book, its pages glowing with an otherworldly light.'));
 
-        const sceneConclusion = document.createElement('p');
-        sceneConclusion.classList.add('narrative');
-        sceneConclusion.textContent = 'Elowen introduces you to the group. "This is the Council of Lore. We have been preparing for this day for generations. The Tome of Convergence has awakened, and it speaks of a prophecy that could shape the fate of all realms.';
-        storyWrapper.appendChild(sceneConclusion);
+        storyWrapper.appendChild(createParagraph('Elowen introduces you to the group. "This is the Council of Lore. We have been preparing for this day for generations. The Tome of Convergence has awakened, and it speaks of a prophecy that could shape the fate of all realms.'));
 
-        const choiceQuestion = document.createElement('p');
-        choiceQuestion.classList.add('choice-section');
-        choiceQuestion.textContent = 'How do you respond?';
-        storyWrapper.appendChild(choiceQuestion);
+        storyWrapper.appendChild(createQuestion('How do you respond?'));
 
-        const choiceList = document.createElement('ol');
-        choiceList.classList.add = 'choice-list';
-        const choices = [
-            { text: "Ask to read the Tome of Convergence yourself.", value: 'readTome' },
-            { text: "Request that Elowen explain the prophecy to you.", value:'hearProphecy' },
-            { text: "Inquire about the Council of Lore and their purpose.", value: 'councilPurpose' }
-        ];
+        const choiceList = createChoiceList([
+            'Ask to read the Tome of Convergence yourself.',
+            'Request that Elowen explain the prophecy to you.',
+            'Inquire about the Council of Lore and their purpose.'
+        ]);
         storyWrapper.appendChild(choiceList);
+
+        const choices = [
+            { text: "Read the Tome", value: 'readTome' },
+            { text: "Prophecy explained", value:'hearProphecy' },
+            { text: "Inquire the Council", value: 'councilPurpose' }
+        ];
         createChoiceButtons(choices, storyWrapper);
-        content.appendChild(storyWrapper);
+    } else {
+        switch (handleChoice) {
+            case 'readTome':
+                loadReadTome();
+                break;
+            case 'hearProphecy':
+                loadHearProphecy();
+                break;
+            case 'councilPurpose':
+                loadCouncilPurpose();
+                break;
+        }
     }
+
+    content.appendChild(storyWrapper);
 }
 
 // Read Tome of Convergence Choice
