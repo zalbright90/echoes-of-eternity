@@ -1,6 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
-import { createTitle, createPathTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, createContinueButton } from './storyUtils';
+import { createTitle, createPathTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, } from './storyUtils';
 
 function loadChapterTwoMoons(choice) {
     loadBackgroundImage(require('../images/elemental-figures.jpg'));
@@ -70,108 +70,68 @@ export function loadFlameGuardian() {
     const storyWrapper = document.createElement('div');
     storyWrapper.classList.add('screen');
 
-    const chapterTitle = document.createElement('h2');
-    chapterTitle.classList.add('chapter-title');
-    chapterTitle.textContent = 'Chapter 2: The Prophecy Unvieled';
-    storyWrapper.appendChild(chapterTitle);
+    storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unvieled'));
 
-    const pathTitle = document.createElement('h3');
-    pathTitle.classList.add('path-title');
-    pathTitle.textContent = 'The Chosen Ones - Flame Guardian';
-    storyWrapper.appendChild(pathTitle);
+    storyWrapper.appendChild(createPathTitle('The Chosen Ones - Flame Guardian'));
 
-    const sceneNarrative = document.createElement('p');
-    sceneNarrative.classList.add('narrative');
-    sceneNarrative.textContent = 'As you approach the figure wreathed in flames, the air around you grows warmer. The figures eyes open, revealing irises that dance with fire.';
-    storyWrapper.appendChild(sceneNarrative);
+    storyWrapper.appendChild(createParagraph('As you approach the figure wreathed in flames, the air around you grows warmer. The figures eyes open, revealing irises that dance with fire.'));
 
-    const sceneContinue = document.createElement('p');
-    sceneContinue.classList.add('narrative');
-    sceneContinue.textContent = '"I am Ignis, Guardian of the Eternal Flame," the figures voice crackling like a hearth. "You bear the mark of the Flame Seeker. The Crown of Eternity calls to you."';
-    storyWrapper.appendChild(sceneContinue);
+    storyWrapper.appendChild(createParagraph('"I am Ignis, Guardian of the Eternal Flame," the figures voice crackling like a hearth. "You bear the mark of the Flame Seeker. The Crown of Eternity calls to you."'));
 
-    const sceneConclusion = document.createElement('p');
-    sceneConclusion.classList.add('narrative');
-    sceneConclusion.textContent = 'Ignis extends a hand, revealing a small, flame-shaped crystal. "This Shard of Fire will guide you to the Crown, hidden within the heart of a dying star. But beware, for shadows seek to extinguish all light."';
-    storyWrapper.appendChild(sceneConclusion);
+    storyWrapper.appendChild(createParagraph('Ignis extends a hand, revealing a small, flame-shaped crystal. "This Shard of Fire will guide you to the Crown, hidden within the heart of a dying star. But beware, for shadows seek to extinguish all light."'));
+    
+    // Logic to continue to Chapter 3
 
     content.appendChild(storyWrapper);
 }
 
 // Mist Weaver Choice
 export function loadMistWeaver() {
-  loadBackgroundImage(require('../images/mist-weaver.jpg'));
+    loadBackgroundImage(require('../images/mist-weaver.jpg'));
 
-  const content = document.getElementById('content');
-  content.innerHTML = '';
+    const content = document.getElementById('content');
+    content.innerHTML = '';
 
-  const storyWrapper = document.createElement('div');
-  storyWrapper.classList.add('screen');
+    const storyWrapper = document.createElement('div');
+    storyWrapper.classList.add('screen');
 
-  const chapterTitle = document.createElement('h2');
-  chapterTitle.classList.add('chapter-title');
-  chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
-  storyWrapper.appendChild(chapterTitle);
+    storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
 
-  const pathTitle = document.createElement('h3');
-  pathTitle.classList.add('path-title');
-  pathTitle.textContent = 'The Chosen Ones - Mist Weaver';
-  storyWrapper.appendChild(pathTitle);
+    storyWrapper.appendChild('The Chosen Ones - Mist Weaver');
 
-  const sceneNarrative = document.createElement('p');
-  sceneNarrative.classList.add('narrative');
-  sceneNarrative.textContent = 'You make your way to the figure surrounded by a misty aura. As you draw near, you feel a cool, refreshing sensation wash over you. The figures eyes open, revealing swirling pools of blue and grey.';
-  storyWrapper.appendChild(sceneNarrative);
+    storyWrapper.appendChild(createParagraph('You make your way to the figure surrounded by a misty aura. As you draw near, you feel a cool, refreshing sensation wash over you. The figures eyes open, revealing swirling pools of blue and grey.'));
 
-  const sceneContinue = document.createElement('p');
-  sceneContinue.classList.add('narrative');
-  sceneContinue.textContent = '"Welcome, Tide Caller. I am Aquarius, Keeper of the Endless Depths," the figure says, their voice like water flowing over stones. "The Chalice of Souls resonates with your spirit."';
-  storyWrapper.appendChild(sceneContinue);
+    storyWrapper.appendChild(createParagraph('"Welcome, Tide Caller. I am Aquarius, Keeper of the Endless Depths," the figure says, their voice like water flowing over stones. "The Chalice of Souls resonates with your spirit."'));
 
-  const sceneConclusion = document.createElement('p');
-  sceneConclusion.classList.add('narrative');
-  sceneConclusion.textContent = 'Aquarius holds out a hand, a small, droplet-shaped pearl resting in their palm. "This Pearl of the Abyss will lead you to the Chalice, hidden in the deepest trench of the Primordial Ocean. But be warned, dark currents seek to drag the realms into chaos.';
-  storyWrapper.appendChild(sceneConclusion);
+    storyWrapper.appendChild(createParagraph('Aquarius holds out a hand, a small, droplet-shaped pearl resting in their palm. "This Pearl of the Abyss will lead you to the Chalice, hidden in the deepest trench of the Primordial Ocean. But be warned, dark currents seek to drag the realms into chaos.'));
+
+  // Logic to continue to Chapter 3
 
   content.appendChild(storyWrapper);
 }
 
 // Earth Shaper Choice
 export function loadEarthShaper() {
-  loadBackgroundImage(require('../images/earth-shaper.jpg'));
+    loadBackgroundImage(require('../images/earth-shaper.jpg'));
 
-  const content = document.getElementById('content');
-  content.innerHTML = '';
+    const content = document.getElementById('content');
+    content.innerHTML = '';
 
-  const storyWrapper = document.createElement('div');
-  storyWrapper.classList.add('screen');
+    const storyWrapper = document.createElement('div');
+    storyWrapper.classList.add('screen');
 
-  const chapterTitle = document.createElement('h2');
-  chapterTitle.classList.add('chapter-title');
-  chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
-  storyWrapper.appendChild(chapterTitle);
+    storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
 
-  const pathTitle = document.createElement('h3');
-  pathTitle.classList.add('path-title');
-  pathTitle.textContent = 'The Chosen Ones - Earth Shaper';
-  storyWrapper.appendChild(pathTitle);
+    storyWrapper.appendChild(createPathTitle('The Chosen Ones - Earth Shaper'));
 
-  const sceneNarrative = document.createElement('p');
-  sceneNarrative.classList.add('narrative');
-  sceneNarrative.textContent = 'You approach the person with vines and leaves swirling around them. The ground beneath your feet seems to hum with energy. The figures eyes open, revealing irises of deep, rich brown flecked with green, red and yellow.';
-  storyWrapper.appendChild(sceneNarrative);
+    storyWrapper.appendChild(createParagraph('You approach the person with vines and leaves swirling around them. The ground beneath your feet seems to hum with energy. The figures eyes open, revealing irises of deep, rich brown flecked with green, red and yellow.'));
 
-  const sceneContinue = document.createElement('p');
-  sceneContinue.classList.add('narrative');
-  sceneContinue.textContent = '"Greetings, Root Weaver. I am Terra, Voice of the Ancient Groves," the figure speaks, their words resonating like a deep drumbeat. "The Codex of Realms calls for your touch."';
-  storyWrapper.appendChild(sceneContinue);
+    storyWrapper.appendChild(createParagraph('"Greetings, Root Weaver. I am Terra, Voice of the Ancient Groves," the figure speaks, their words resonating like a deep drumbeat. "The Codex of Realms calls for your touch."'));
 
-  const sceneConclusion = document.createElement('p');
-  sceneConclusion.classList.add('narrative');
-  sceneConclusion.textContent = 'Terra presents you with a seed that glows with an inner light. "This Seed of Yggdrasil will guide you to the Codex, nestled in the heart of the World Tree. But tread carefully, for parasitic forces seek to corrupt the tree and unravel the fabric of reality."';
-  storyWrapper.appendChild(sceneConclusion);
+    storyWrapper.appendChild(createParagraph('Terra presents you with a seed that glows with an inner light. "This Seed of Yggdrasil will guide you to the Codex, nestled in the heart of the World Tree. But tread carefully, for parasitic forces seek to corrupt the tree and unravel the fabric of reality."'));
 
-  content.appendChild(storyWrapper);
+    // Logic to continue to Chapter 3
+    content.appendChild(storyWrapper);
 }
 
 export default loadChapterTwoMoons;

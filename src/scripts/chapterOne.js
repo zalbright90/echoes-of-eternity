@@ -1,9 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
 import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho } from './storyUtils';
-import loadChapterTwoMoons from './chapterTwo-Moons';
-import loadChapterTwoElders from './chapterTwo-Elder';
-import loadChapterTwoTemple from './chapterTwo-Temple';
 
 function loadChapterOne(choice) {
     const content = document.getElementById('content');
