@@ -4,7 +4,7 @@ import loadChapterOne, { loadInvestigateMoons, loadInvestigateSymbols, loadTriad
 
 import loadChapterTwoMoons, { loadFlameGuardian, loadMistWeaver, loadEarthShaper } from './chapterTwo-Moons';
 
-import loadChapterTwoElders, { loadReadTome } from './chapterTwo-Elder';
+import loadChapterTwoElders, { loadReadTome, loadHearProphecy, loadCouncilPurpose } from './chapterTwo-Elder';
 
 
 function narrativeScreen() {
@@ -33,82 +33,90 @@ export function createChoiceButtons(choices, parentElement) {
 
 // Function to handle user choices
 export function handleChoice(choice) {
-  switch (choice) {
-      case 'investigateMoons':
-          console.log('User pushes through crowd...');
-          loadInvestigateMoons();
-          break;
-          case 'investigateSymbols':
-              console.log('User examines symbol on hand...');
-              loadInvestigateSymbols();
-              break;
-          case 'triadFate':
-              console.log('User asks about Triad of Fate...');
-              loadTriadFate();
-              break;
-          case 'lookAround':
-              console.log('User scans the crowd...');
-              loadLookAround();
-              break;
-      case 'seekElder':
-          console.log('User seeks an elder...');
-          loadSeekElder();
-          break;
-          case 'aboutConvergence':
-            console.log('User reads about the Convergence...');
-            loadAboutConvergence();
+    switch (choice) {
+        case 'investigateMoons':
+            console.log('User pushes through crowd...');
+            loadInvestigateMoons();
             break;
-          case 'awakeningPowers':
-            console.log('User learns about awakening the powers...');
-            loadAwakeningPowers();
+            case 'investigateSymbols':
+                console.log('User examines symbol on hand...');
+                loadInvestigateSymbols();
+                break;
+            case 'triadFate':
+                console.log('User asks about Triad of Fate...');
+                loadTriadFate();
+                break;
+            case 'lookAround':
+                console.log('User scans the crowd...');
+                loadLookAround();
+                break;
+        case 'seekElder':
+            console.log('User seeks an elder...');
+            loadSeekElder();
             break;
-          case 'textsProphecies':
-            console.log('User reads texts from prophecies...');
-            loadTextsProphecies();
+            case 'aboutConvergence':
+                console.log('User reads about the Convergence...');
+                loadAboutConvergence();
+                break;
+            case 'awakeningPowers':
+                console.log('User learns about awakening the powers...');
+                loadAwakeningPowers();
+                break;
+            case 'textsProphecies':
+                console.log('User reads texts from prophecies...');
+                loadTextsProphecies();
+                break;
+        case 'visitTemple':
+            console.log('User visits a temple...');
+            loadVisitTemple();
             break;
-      case 'visitTemple':
-          console.log('User visits a temple...');
-          loadVisitTemple();
-          break;
-          case 'moons':
-            console.log('User looks to the moons with the High Priestess...');
-            loadMoons();
+            case 'moons':
+                console.log('User looks to the moons with the High Priestess...');
+                loadMoons();
+                break;
+            case 'roleDestiny':
+                console.log('User has their role explained...');
+                loadRoleDestiny();
+                break;
+            case 'nextSteps':
+                console.log('User finds out their next steps...');
+                loadNextSteps();
+                break;
+        case 'chapterTwoMoons':
+            console.log('User has progressed to Chapter 2 from investigating the moons...');
+            loadChapterTwoMoons();
             break;
-          case 'roleDestiny':
-            console.log('User has their role explained...');
-            loadRoleDestiny();
+            case 'flameGuardian':
+                console.log('User chooses Flame Guardian...');
+                loadFlameGuardian();
+                break;
+            case 'mistWeaver':
+                console.log('User chooses Mist Weaver...');
+                loadMistWeaver();
+                break;
+            case 'earthShaper':
+                console.log('User chooses Earth Shaper...');
+                loadEarthShaper();
+                break;
+        case 'chapterTwoElders':
+            console.log('User seeks the elders...');
+            loadChapterTwoElders();
             break;
-          case 'nextSteps':
-            console.log('User finds out their next steps...');
-            loadNextSteps();
+            case 'readTome':
+                console.log('User reads from the tome...');
+                loadReadTome();
+                break;
+            case 'hearProphecy':
+                console.log('User chooses to listen...');
+                loadHearProphecy();
+                break;
+            case 'councilPurpose':
+                console.log('User chooses to hear the councils purpose...');
+                loadCouncilPurpose();
+                break;
+        default:
+            console.log('Unknown choice; dev check import, switch case, and check export');
             break;
-      case 'chapterTwoMoons':
-        console.log('User has progressed to Chapter 2 from investigating the moons...');
-        loadChapterTwoMoons();
-        break;
-        case 'flameGuardian':
-          console.log('User chooses Flame Guardian...');
-          loadFlameGuardian();
-          break;
-        case 'mistWeaver':
-          console.log('User chooses Mist Weaver...');
-          loadMistWeaver();
-          break;
-        case 'earthShaper':
-          console.log('User chooses Earth Shaper...');
-          loadEarthShaper();
-          break;
-      case 'chapterTwoElders':
-        console.log('User seeks the elders...');
-        loadChapterTwoElders();
-        break;
-        case 'readTome':
-          console.log('User reads from the tome...');
-          loadReadTome();
-          break;
-      default:
-          console.log('Unknown choice; dev check import, switch case, and export');
-          break;
   }
 }
 

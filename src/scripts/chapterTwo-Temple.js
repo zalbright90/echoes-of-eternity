@@ -1,6 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from "./story";
 import { loadBackgroundImage } from "./initializer";
-import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, createContinueButton } from './storyUtils';
+import { createAct, createTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho } from './storyUtils';
 
 function loadChapterTwoTemple(choice) {
     loadBackgroundImage(require('../images/temple-mosaic.jpg'));

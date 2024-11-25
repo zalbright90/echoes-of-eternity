@@ -1,6 +1,6 @@
 import { createChoiceButtons, handleChoice, saveProgress, loadProgress } from './story';
 import { loadBackgroundImage } from './initializer';
-import { createTitle, createPathTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho, } from './storyUtils';
+import { createTitle, createPathTitle, createScene, createParagraph, createQuestion, createChoiceList, createVoiceEcho } from './storyUtils';
 
 function loadChapterTwoMoons(choice) {
     loadBackgroundImage(require('../images/elemental-figures.jpg'));

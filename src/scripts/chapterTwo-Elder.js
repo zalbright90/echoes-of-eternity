@@ -70,25 +70,13 @@ export function loadReadTome() {
     const storyWrapper = document.createElement('div');
     storyWrapper.classList.add('screen');
 
-    const chapterTitle = document.createElement('h2');
-    chapterTitle.classList.add('chapter-title');
-    chapterTitle.textContent = 'Chapter 2: The Prophecy Unveiled';
-    storyWrapper.appendChild(chapterTitle);
+    storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
 
-    const pathTitle = document.createElement('h3');
-    pathTitle.classList.add('path-title');
-    pathTitle.textContent = 'The Forgotten Ones - Read the Tome of Convergence';
-    storyWrapper.appendChild(pathTitle);
+    storyWrapper.appendChild(createPathTitle('The Forgotten Ones - Read the Tome of Convergence'));
 
-    const infoParagraph = document.createElement('p');
-    infoParagraph.classList.add('info');
-    infoParagraph.textContent = 'As your fingers brush against the ancient, glowing pages of the Tome, a surge of energy courses through your veins. The world around you dims, and your vision is flooded with knowledge beyond comprehension.';
-    storyWrapper.appendChild(infoParagraph);
+    storyWrapper.appendChild(createScene('As your fingers brush against the ancient, glowing pages of the Tome, a surge of energy courses through your veins. The world around you dims, and your vision is flooded with knowledge beyond comprehension.'));
 
-    const sceneNarrative = document.createElement('p');
-    sceneNarrative.classList.add('narrative');
-    sceneNarrative.textContent = 'Suddenly, three artifacts materialize before your minds eye, vivid and pulsing with immense power:'
-    storyWrapper.appendChild(sceneNarrative);
+    storyWrapper.appendChild(createParagraph('Suddenly, three artifacts materialize before your minds eye, vivid and pulsing with immense power:'));
 
     const items = [
         { text: "A crown - shimmering with an ethereal light, its surface ripples with the passage of time itself. It pulses with temporal energy, bending reality as if each moment were caught in its grasp." },
@@ -98,31 +86,72 @@ export function loadReadTome() {
     const artifactList = createItemList(items, { type: 'ol' });
     storyWrapper.appendChild(artifactList);
 
-    const sceneContinue = document.createElement('p');
-    sceneContinue.classList.add('narrative');
-    sceneContinue.textContent = 'These are the Lost Relics, whispered of in forgotten legends, hidden away eons ago to prevent catastrophe. The vision shows them as keystones in the balance of power between the realms. Their significance weighs heavily upon your mind, for you know now what few others do: the fate of all existence is tied to these artifacts, and they must not fall into the wrong hands.';
-    storyWrapper.appendChild(sceneContinue);
+    storyWrapper.appendChild(createParagraph('These are the Lost Relics, whispered of in forgotten legends, hidden away eons ago to prevent catastrophe. The vision shows them as keystones in the balance of power between the realms. Their significance weighs heavily upon your mind, for you know now what few others do: the fate of all existence is tied to these artifacts, and they must not fall into the wrong hands.'));
 
-    const sceneChange = document.createElement('p');
-    sceneChange.classList.add('narrative');
-    sceneChange.textContent = 'The Tome then reveals its final secret—a choice. A moment will come when the realms themselves will collide, and only the bearers of these relics will be able to make the decision that could either save or doom them all. The moment of Convergence draws near, and when it does, the power to reshape destiny will rest in your hands.';
-    storyWrapper.appendChild(sceneChange);
+    storyWrapper.appendChild(createParagraph('The Tome then reveals its final secret—a choice. A moment will come when the realms themselves will collide, and only the bearers of these relics will be able to make the decision that could either save or doom them all. The moment of Convergence draws near, and when it does, the power to reshape destiny will rest in your hands.'));
 
-    const sceneConclusion = document.createElement('p');
-    sceneConclusion.classList.add('narrative');
-    sceneConclusion.textContent = 'As the vision fades, your breath catches. You glance down at your palm, where a new mark has appeared, glowing faintly: a spiraling clock face, intricately detailed as if it ticks with the flow of time itself. The weight of your destiny sinks in — you have been chosen. You are the Timeweaver, fated to seek and wield the Crown of Eternity, the first of the Lost Relics.';
-    storyWrapper.appendChild(sceneConclusion);
+    storyWrapper.appendChild(createParagraph('As the vision fades, your breath catches. You glance down at your palm, where a new mark has appeared, glowing faintly: a spiraling clock face, intricately detailed as if it ticks with the flow of time itself. The weight of your destiny sinks in — you have been chosen. You are the Timeweaver, fated to seek and wield the Crown of Eternity, the first of the Lost Relics.'));
 
-    const voiceEcho = document.createElement('em');
-    voiceEcho.classList.add('voice-echo');
-    voiceEcho.textContent = 'The knowledge burns within you now. This is your path. The relics must be found, and the fate of all realms rests on the choices that lie ahead. The clock is ticking.';
-    storyWrapper.appendChild(voiceEcho);
+    storyWrapper.appendChild(createVoiceEcho('The knowledge burns within you now. This is your path. The relics must be found, and the fate of all realms rests on the choices that lie ahead. The clock is ticking.'));
     content.appendChild(storyWrapper);
 }
-// Hear Prophecy Choice
 
+// Hear Prophecy Choice
+export function loadHearProphecy() {
+    loadBackgroundImage(require('../images/library-fire.jpg'));
+
+    const content = document.getElementById('content');
+    content.innerHTML = '';
+
+    const storyWrapper = document.createElement('div');
+    storyWrapper.classList.add('screen');
+
+    storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
+
+    storyWrapper.appendChild(createPathTitle("The Forgotten Ones - Elowen's explanation"));
+
+    storyWrapper.appendChild(createScene('The fire crackled merrily, casting dancing shadows on the stone walls of the ancient library. Elowen, a woman with eyes as deep as the midnight sky, leaned forward, her voice hushed.'));
+
+    storyWrapper.appendChild(createVoiceEcho('"The prophecy speaks of three Lost Relics: the Crown of Eternity, the Chalice of Souls, and the Codex of Realms. These artifacts hold immense power over Time, Life, and Space respectively."'));
+
+    storyWrapper.appendChild(createParagraph('A thrill of anticipation coursed through you as she continued.'));
+
+    storyWrapper.appendChild(createVoiceEcho('"The Convergence will weaken the barriers between realms, allowing these relics to be found. But they must be united by three chosen bearers before the Convergence peaks, or all realms may collapse into chaos."'));
+
+    storyWrapper.appendChild(createParagraph("As Elowen's voice filled the room, a strange tingling sensation began to pulse on your palm. Curiosity piqued, you glanced down, your breath catching in your throat. A symbol, a tree with leaves that seemed to shift and change, had materialized on your skin."));
+
+    storyWrapper.appendChild(createParagraph('A chill ran down your spine as the realization dawned upon you. You had been marked, chosen as the Realm Walker, destined to seek the Codex of Realms.'));
+
+    // TODO: Add logic to go to Chapter 3
+
+    content.appendChild(storyWrapper);
+}
 
 // Council's Purpose Choice
+export function loadCouncilPurpose() {
+    loadBackgroundImage(require('../images/council-chamber.jpg'));
 
+    const content = document.getElementById('content');
+    content.innerHTML = '';
+
+    const storyWrapper = document.createElement('div');
+    storyWrapper.classList.add('screen');
+
+    storyWrapper.appendChild(createTitle('Chapter 2: The Prophecy Unveiled'));
+
+    storyWrapper.appendChild(createPathTitle('The Forgotten Ones - Inquire the Council'));
+
+    storyWrapper.appendChild(createScene('The ancient library was bathed in the soft glow of flickering torches. A hush fell over the gathered Council members as an elderly figure stepped forward. His eyes, though dimmed by age, held a timeless wisdom.'));
+
+    storyWrapper.appendChild(createVoiceEcho('"We are the guardians of knowledge, preparing for this moment across generations," he began, his voice a low rumble. "Our purpose is to guide those chosen - like you - in their quest to find the Lost Relics and navigate the challenges of the Convergence."'));
+
+    storyWrapper.appendChild(createParagraph('As he spoke, a strange sensation washed over you. A warmth spread from your palm, tingling and pulsing. You looked down, your breath catching in your throat. A symbol, a chalice encircled by ethereal mist, had materialized on your skin.'));
+
+    storyWrapper.appendChild(createParagraph('You had been chosen, marked as the Soul Keeper, destined to seek the Chalice of Souls. A weight, both exhilarating and terrifying, settled upon your shoulders. Your journey had only just begun.'));
+
+    // TODO: Add logic to go to Chapter 3
+
+    content.appendChild(storyWrapper);
+}
 
 export default loadChapterTwoElders;
