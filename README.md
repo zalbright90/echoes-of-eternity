@@ -10,17 +10,16 @@ The game is a branching narrative, with multiple endings based on player choices
 
 - Branching narrative: The story has multiple endings based on player choices, creating a unique and engaging experience for each playthrough.
 - Interactive choices: Players make decisions that affect the story, with consequences that can lead to different outcomes.
-- Non-linear story: The game unfolds in a non-linear fashion, with players able to revisit previous events and make different choices to alter the course of events.
-- Rich and immersive world: The game features a detailed and immersive world, filled with unique creatures, ancient artifacts, and mystical phenomena.
+
 
 ### Controls
 
 - Mouse: Click on choices to make selections and advance the story.
 - Mobile: Tap choices to make selectiosn and advance the story.
 
-## Installation
+## Reading
 
-To play Echoes of Eternity:
+To read and interact with Echoes of Eternity:
 
 Visit [Echoes of Eternity](https://zalbright90.github.io/echoes-of-eternity) <-- Click Me!
 
